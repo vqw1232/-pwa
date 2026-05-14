@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create *)",
+      "WebSearch",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/luomor-web/dict/main/data/IELTS_3.json\" --max-time 15 -o \"C:/Users/25413/Desktop/新建文件夹/IELTS_3_raw.json\")",
+      "Bash(npx --yes create-vite@latest ielts-vocab-temp --template react)",
+      "Bash(mv ielts-vocab-temp/* .)",
+      "Bash(mv ielts-vocab-temp/.* .)",
+      "Bash(rmdir ielts-vocab-temp *)",
+      "Bash(npm install *)",
+      "Bash(node -e ' *)",
+      "Bash(curl -s -X POST https://api.supabase.com/v1/projects/hwxvvaklrcdcnmrtihqk/sql -H 'Authorization: Bearer sb_publishable_jdBp8kmyno86DTyWvjqO7A_8k72LzIY' -H 'Content-Type: application/json' -d '{\"query\": \"CREATE TABLE IF NOT EXISTS user_progress \\(id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, user_id TEXT NOT NULL, word_id INTEGER NOT NULL, correct_count INTEGER DEFAULT 0, wrong_count INTEGER DEFAULT 0, last_reviewed_at TIMESTAMPTZ DEFAULT NOW\\(\\), UNIQUE\\(user_id, word_id\\)\\); ALTER TABLE user_progress ENABLE ROW LEVEL SECURITY; CREATE POLICY \\\\\"Allow all on user_progress\\\\\" ON user_progress FOR ALL USING \\(true\\) WITH CHECK \\(true\\);\"}')",
+      "Bash(curl *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ]
+  }
+}

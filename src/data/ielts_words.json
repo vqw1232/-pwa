@@ -1,0 +1,3502 @@
+[
+  {
+    "id": 1,
+    "word": "display",
+    "phonetic": "/dɪˈspleɪ/",
+    "meaning": "展示；陈列",
+    "example": "The museum displays artefacts from ancient Egypt."
+  },
+  {
+    "id": 2,
+    "word": "transmit",
+    "phonetic": "/trænzˈmɪt/",
+    "meaning": "传输；传播",
+    "example": "The disease is transmitted by mosquitoes."
+  },
+  {
+    "id": 3,
+    "word": "labor",
+    "phonetic": "/ˈleɪbə/",
+    "meaning": "劳动；劳动力",
+    "example": "The construction work requires skilled labor."
+  },
+  {
+    "id": 4,
+    "word": "correspond",
+    "phonetic": "/ˌkɒrəˈspɒnd/",
+    "meaning": "对应；通信",
+    "example": "The numbers correspond to different categories."
+  },
+  {
+    "id": 5,
+    "word": "category",
+    "phonetic": "/ˈkætəɡəri/",
+    "meaning": "类别；种类",
+    "example": "The books are divided into different categories."
+  },
+  {
+    "id": 6,
+    "word": "characteristic",
+    "phonetic": "/ˌkærəktəˈrɪstɪk/",
+    "meaning": "特征；特点",
+    "example": "One characteristic of dolphins is their intelligence."
+  },
+  {
+    "id": 7,
+    "word": "shift",
+    "phonetic": "/ʃɪft/",
+    "meaning": "转移；转变",
+    "example": "There has been a shift in public opinion."
+  },
+  {
+    "id": 8,
+    "word": "manual",
+    "phonetic": "/ˈmænjuəl/",
+    "meaning": "手册；体力的",
+    "example": "Refer to the manual for installation instructions."
+  },
+  {
+    "id": 9,
+    "word": "furthermore",
+    "phonetic": "/ˌfɜːðəˈmɔː/",
+    "meaning": "此外；而且",
+    "example": "The house is beautiful. Furthermore, the price is reasonable."
+  },
+  {
+    "id": 10,
+    "word": "assist",
+    "phonetic": "/əˈsɪst/",
+    "meaning": "帮助；协助",
+    "example": "The software assists users in managing their finances."
+  },
+  {
+    "id": 11,
+    "word": "consequence",
+    "phonetic": "/ˈkɒnsɪkwəns/",
+    "meaning": "结果；后果",
+    "example": "Global warming is a consequence of pollution."
+  },
+  {
+    "id": 12,
+    "word": "reverse",
+    "phonetic": "/rɪˈvɜːs/",
+    "meaning": "反转；逆转",
+    "example": "The trend cannot be reversed easily."
+  },
+  {
+    "id": 13,
+    "word": "appeal",
+    "phonetic": "/əˈpiːl/",
+    "meaning": "吸引力；呼吁",
+    "example": "The idea of working abroad appeals to many young people."
+  },
+  {
+    "id": 14,
+    "word": "qualify",
+    "phonetic": "/ˈkwɒlɪfaɪ/",
+    "meaning": "使合格；限定",
+    "example": "The training will qualify you for the position."
+  },
+  {
+    "id": 15,
+    "word": "positive",
+    "phonetic": "/ˈpɒzətɪv/",
+    "meaning": "积极的；肯定的",
+    "example": "Try to maintain a positive attitude."
+  },
+  {
+    "id": 16,
+    "word": "precede",
+    "phonetic": "/prɪˈsiːd/",
+    "meaning": "先于；领先",
+    "example": "Lunch will be preceded by a short speech."
+  },
+  {
+    "id": 17,
+    "word": "challenge",
+    "phonetic": "/ˈtʃælɪndʒ/",
+    "meaning": "挑战；质疑",
+    "example": "Finding a solution was a real challenge."
+  },
+  {
+    "id": 18,
+    "word": "target",
+    "phonetic": "/ˈtɑːɡɪt/",
+    "meaning": "目标；对象",
+    "example": "We need to set realistic targets."
+  },
+  {
+    "id": 19,
+    "word": "sustain",
+    "phonetic": "/səˈsteɪn/",
+    "meaning": "维持；支撑",
+    "example": "The soil is too poor to sustain plant growth."
+  },
+  {
+    "id": 20,
+    "word": "replace",
+    "phonetic": "/rɪˈpleɪs/",
+    "meaning": "替换；取代",
+    "example": "We need to replace the old equipment."
+  },
+  {
+    "id": 21,
+    "word": "eliminate",
+    "phonetic": "/ɪˈlɪmɪneɪt/",
+    "meaning": "消除；淘汰",
+    "example": "We need to eliminate unnecessary costs."
+  },
+  {
+    "id": 22,
+    "word": "advantage",
+    "phonetic": "/ədˈvɑːntɪdʒ/",
+    "meaning": "优势；有利条件",
+    "example": "Being bilingual is a great advantage in the job market."
+  },
+  {
+    "id": 23,
+    "word": "physical",
+    "phonetic": "/ˈfɪzɪkl/",
+    "meaning": "物理的；身体的",
+    "example": "Regular physical activity is good for health."
+  },
+  {
+    "id": 24,
+    "word": "predict",
+    "phonetic": "/prɪˈdɪkt/",
+    "meaning": "预测；预言",
+    "example": "It is difficult to predict the future."
+  },
+  {
+    "id": 25,
+    "word": "integrate",
+    "phonetic": "/ˈɪntɪɡreɪt/",
+    "meaning": "整合；融入",
+    "example": "The school aims to integrate students from different backgrounds."
+  },
+  {
+    "id": 26,
+    "word": "relate",
+    "phonetic": "/rɪˈleɪt/",
+    "meaning": "关联；叙述",
+    "example": "The two events are closely related."
+  },
+  {
+    "id": 27,
+    "word": "concept",
+    "phonetic": "/ˈkɒnsept/",
+    "meaning": "概念；观念",
+    "example": "The concept of democracy originated in ancient Greece."
+  },
+  {
+    "id": 28,
+    "word": "distribute",
+    "phonetic": "/dɪˈstrɪbjuːt/",
+    "meaning": "分配；分发",
+    "example": "The charity distributed food to the homeless."
+  },
+  {
+    "id": 29,
+    "word": "acquire",
+    "phonetic": "/əˈkwaɪə/",
+    "meaning": "获得；学到",
+    "example": "Children acquire language through interaction."
+  },
+  {
+    "id": 30,
+    "word": "population",
+    "phonetic": "/ˌpɒpjuˈleɪʃn/",
+    "meaning": "人口；种群",
+    "example": "The world population continues to grow."
+  },
+  {
+    "id": 31,
+    "word": "apparent",
+    "phonetic": "/əˈpærənt/",
+    "meaning": "明显的；表面的",
+    "example": "It was apparent that he was nervous."
+  },
+  {
+    "id": 32,
+    "word": "aggregate",
+    "phonetic": "/ˈæɡrɪɡət/",
+    "meaning": "总计；集合",
+    "example": "The aggregate score was calculated from all tests."
+  },
+  {
+    "id": 33,
+    "word": "major",
+    "phonetic": "/ˈmeɪdʒə/",
+    "meaning": "主要的；重大的",
+    "example": "There has been a major change in policy."
+  },
+  {
+    "id": 34,
+    "word": "section",
+    "phonetic": "/ˈsekʃn/",
+    "meaning": "部分；区域",
+    "example": "The report is divided into three sections."
+  },
+  {
+    "id": 35,
+    "word": "define",
+    "phonetic": "/dɪˈfaɪn/",
+    "meaning": "定义；界定",
+    "example": "How would you define success?"
+  },
+  {
+    "id": 36,
+    "word": "devote",
+    "phonetic": "/dɪˈvəʊt/",
+    "meaning": "致力于；奉献",
+    "example": "She devotes a lot of time to volunteer work."
+  },
+  {
+    "id": 37,
+    "word": "prosperity",
+    "phonetic": "/prɒˈsperəti/",
+    "meaning": "繁荣；兴旺",
+    "example": "The country enjoyed a period of prosperity."
+  },
+  {
+    "id": 38,
+    "word": "constitute",
+    "phonetic": "/ˈkɒnstɪtjuːt/",
+    "meaning": "构成；组成",
+    "example": "Women constitute a large proportion of the workforce."
+  },
+  {
+    "id": 39,
+    "word": "advance",
+    "phonetic": "/ədˈvɑːns/",
+    "meaning": "前进；进步",
+    "example": "Medical technology has advanced significantly."
+  },
+  {
+    "id": 40,
+    "word": "engage",
+    "phonetic": "/ɪnˈɡeɪdʒ/",
+    "meaning": "参与；吸引",
+    "example": "The speaker engaged the audience with his story."
+  },
+  {
+    "id": 41,
+    "word": "promote",
+    "phonetic": "/prəˈməʊt/",
+    "meaning": "促进；推广",
+    "example": "The campaign promotes healthy eating habits."
+  },
+  {
+    "id": 42,
+    "word": "immediate",
+    "phonetic": "/ɪˈmiːdiət/",
+    "meaning": "立即的；直接的",
+    "example": "The patient needs immediate medical attention."
+  },
+  {
+    "id": 43,
+    "word": "similar",
+    "phonetic": "/ˈsɪmələ/",
+    "meaning": "相似的；类似的",
+    "example": "The two paintings are very similar."
+  },
+  {
+    "id": 44,
+    "word": "reject",
+    "phonetic": "/rɪˈdʒekt/",
+    "meaning": "拒绝；排斥",
+    "example": "The proposal was rejected by the committee."
+  },
+  {
+    "id": 45,
+    "word": "familiar",
+    "phonetic": "/fəˈmɪliə/",
+    "meaning": "熟悉的；常见的",
+    "example": "Are you familiar with this software?"
+  },
+  {
+    "id": 46,
+    "word": "interval",
+    "phonetic": "/ˈɪntəvl/",
+    "meaning": "间隔；间歇",
+    "example": "The buses run at 10-minute intervals."
+  },
+  {
+    "id": 47,
+    "word": "justify",
+    "phonetic": "/ˈdʒʌstɪfaɪ/",
+    "meaning": "证明…正当；辩护",
+    "example": "How can you justify such behavior?"
+  },
+  {
+    "id": 48,
+    "word": "possess",
+    "phonetic": "/pəˈzes/",
+    "meaning": "拥有；具有",
+    "example": "She possesses excellent leadership skills."
+  },
+  {
+    "id": 49,
+    "word": "authority",
+    "phonetic": "/ɔːˈθɒrəti/",
+    "meaning": "权威；当局",
+    "example": "The local authority is responsible for road maintenance."
+  },
+  {
+    "id": 50,
+    "word": "ultimate",
+    "phonetic": "/ˈʌltɪmət/",
+    "meaning": "最终的；根本的",
+    "example": "The ultimate goal is to achieve peace."
+  },
+  {
+    "id": 51,
+    "word": "project",
+    "phonetic": "/ˈprɒdʒekt/",
+    "meaning": "项目；工程",
+    "example": "The construction project will take two years."
+  },
+  {
+    "id": 52,
+    "word": "immigrant",
+    "phonetic": "/ˈɪmɪɡrənt/",
+    "meaning": "移民；侨民",
+    "example": "The city has a large immigrant population."
+  },
+  {
+    "id": 53,
+    "word": "resemble",
+    "phonetic": "/rɪˈzembl/",
+    "meaning": "类似；像",
+    "example": "The two products resemble each other closely."
+  },
+  {
+    "id": 54,
+    "word": "anticipate",
+    "phonetic": "/ænˈtɪsɪpeɪt/",
+    "meaning": "预期；预料",
+    "example": "We anticipate significant growth in the market."
+  },
+  {
+    "id": 55,
+    "word": "intervene",
+    "phonetic": "/ˌɪntəˈviːn/",
+    "meaning": "干预；介入",
+    "example": "The government intervened to stabilize the economy."
+  },
+  {
+    "id": 56,
+    "word": "overlap",
+    "phonetic": "/ˌəʊvəˈlæp/",
+    "meaning": "重叠；部分重复",
+    "example": "The two subjects overlap considerably."
+  },
+  {
+    "id": 57,
+    "word": "harmony",
+    "phonetic": "/ˈhɑːməni/",
+    "meaning": "和谐；协调",
+    "example": "The two communities lived in harmony."
+  },
+  {
+    "id": 58,
+    "word": "external",
+    "phonetic": "/ɪkˈstɜːnl/",
+    "meaning": "外部的；外来的",
+    "example": "The company hired an external consultant."
+  },
+  {
+    "id": 59,
+    "word": "pollution",
+    "phonetic": "/pəˈluːʃn/",
+    "meaning": "污染；污染物",
+    "example": "Air pollution is a major health concern."
+  },
+  {
+    "id": 60,
+    "word": "enhance",
+    "phonetic": "/ɪnˈhɑːns/",
+    "meaning": "提高；增强",
+    "example": "Regular practice will enhance your skills."
+  },
+  {
+    "id": 61,
+    "word": "clarify",
+    "phonetic": "/ˈklærəfaɪ/",
+    "meaning": "澄清；阐明",
+    "example": "Could you clarify your point?"
+  },
+  {
+    "id": 62,
+    "word": "abandon",
+    "phonetic": "/əˈbændən/",
+    "meaning": "放弃；遗弃",
+    "example": "They had to abandon the project due to lack of funding."
+  },
+  {
+    "id": 63,
+    "word": "obvious",
+    "phonetic": "/ˈɒbviəs/",
+    "meaning": "明显的；显然的",
+    "example": "It was obvious that he was lying."
+  },
+  {
+    "id": 64,
+    "word": "enormous",
+    "phonetic": "/ɪˈnɔːməs/",
+    "meaning": "巨大的；庞大的",
+    "example": "The project involved an enormous amount of work."
+  },
+  {
+    "id": 65,
+    "word": "expert",
+    "phonetic": "/ˈekspɜːt/",
+    "meaning": "专家；行家",
+    "example": "She is an expert in environmental law."
+  },
+  {
+    "id": 66,
+    "word": "require",
+    "phonetic": "/rɪˈkwaɪə/",
+    "meaning": "需要；要求",
+    "example": "This job requires strong communication skills."
+  },
+  {
+    "id": 67,
+    "word": "philosophy",
+    "phonetic": "/fəˈlɒsəfi/",
+    "meaning": "哲学；人生理念",
+    "example": "She studied philosophy at university."
+  },
+  {
+    "id": 68,
+    "word": "conduct",
+    "phonetic": "/kənˈdʌkt/",
+    "meaning": "进行；实施",
+    "example": "The experiment was conducted under strict conditions."
+  },
+  {
+    "id": 69,
+    "word": "reliable",
+    "phonetic": "/rɪˈlaɪəbl/",
+    "meaning": "可靠的；可信的",
+    "example": "We need reliable sources of information."
+  },
+  {
+    "id": 70,
+    "word": "symbol",
+    "phonetic": "/ˈsɪmbl/",
+    "meaning": "象征；符号",
+    "example": "The dove is a symbol of peace."
+  },
+  {
+    "id": 71,
+    "word": "incident",
+    "phonetic": "/ˈɪnsɪdənt/",
+    "meaning": "事件；事故",
+    "example": "The incident was reported to the police."
+  },
+  {
+    "id": 72,
+    "word": "identical",
+    "phonetic": "/aɪˈdentɪkl/",
+    "meaning": "相同的；一致的",
+    "example": "The two products are almost identical."
+  },
+  {
+    "id": 73,
+    "word": "defeat",
+    "phonetic": "/dɪˈfiːt/",
+    "meaning": "击败；失败",
+    "example": "The team was defeated in the final match."
+  },
+  {
+    "id": 74,
+    "word": "distinguish",
+    "phonetic": "/dɪˈstɪŋɡwɪʃ/",
+    "meaning": "区分；辨别",
+    "example": "It is hard to distinguish between the two versions."
+  },
+  {
+    "id": 75,
+    "word": "associate",
+    "phonetic": "/əˈsəʊʃieɪt/",
+    "meaning": "联想；关联",
+    "example": "We often associate stress with work pressure."
+  },
+  {
+    "id": 76,
+    "word": "hesitate",
+    "phonetic": "/ˈhezɪteɪt/",
+    "meaning": "犹豫；迟疑",
+    "example": "Don't hesitate to ask if you have any questions."
+  },
+  {
+    "id": 77,
+    "word": "suppose",
+    "phonetic": "/səˈpəʊz/",
+    "meaning": "假设；认为",
+    "example": "I suppose you are right."
+  },
+  {
+    "id": 78,
+    "word": "rigid",
+    "phonetic": "/ˈrɪdʒɪd/",
+    "meaning": "严格的；僵硬的",
+    "example": "The school has rigid rules."
+  },
+  {
+    "id": 79,
+    "word": "abundant",
+    "phonetic": "/əˈbʌndənt/",
+    "meaning": "丰富的；充裕的",
+    "example": "The region has abundant natural resources."
+  },
+  {
+    "id": 80,
+    "word": "mechanism",
+    "phonetic": "/ˈmekənɪzəm/",
+    "meaning": "机制；机理",
+    "example": "The market mechanism determines prices."
+  },
+  {
+    "id": 81,
+    "word": "original",
+    "phonetic": "/əˈrɪdʒɪnl/",
+    "meaning": "原来的；独创性的",
+    "example": "The original document has been lost."
+  },
+  {
+    "id": 82,
+    "word": "sequence",
+    "phonetic": "/ˈsiːkwəns/",
+    "meaning": "顺序；序列",
+    "example": "The events must be viewed in sequence."
+  },
+  {
+    "id": 83,
+    "word": "allocate",
+    "phonetic": "/ˈæləkeɪt/",
+    "meaning": "分配；拨出",
+    "example": "The government allocated funds for education."
+  },
+  {
+    "id": 84,
+    "word": "intellectual",
+    "phonetic": "/ˌɪntəˈlektʃuəl/",
+    "meaning": "智力的；知识性的",
+    "example": "Reading stimulates intellectual development."
+  },
+  {
+    "id": 85,
+    "word": "normal",
+    "phonetic": "/ˈnɔːml/",
+    "meaning": "正常的；标准的",
+    "example": "It is normal to feel nervous before an exam."
+  },
+  {
+    "id": 86,
+    "word": "resolve",
+    "phonetic": "/rɪˈzɒlv/",
+    "meaning": "解决；决心",
+    "example": "We need to resolve this issue quickly."
+  },
+  {
+    "id": 87,
+    "word": "ambitious",
+    "phonetic": "/æmˈbɪʃəs/",
+    "meaning": "有雄心的；野心勃勃的",
+    "example": "She has ambitious plans for the future."
+  },
+  {
+    "id": 88,
+    "word": "formula",
+    "phonetic": "/ˈfɔːmjələ/",
+    "meaning": "公式；方案",
+    "example": "There is no simple formula for success."
+  },
+  {
+    "id": 89,
+    "word": "adopt",
+    "phonetic": "/əˈdɒpt/",
+    "meaning": "采用；收养",
+    "example": "The company decided to adopt new technology."
+  },
+  {
+    "id": 90,
+    "word": "abstract",
+    "phonetic": "/ˈæbstrækt/",
+    "meaning": "抽象的；摘要",
+    "example": "The research deals with abstract concepts like time and space."
+  },
+  {
+    "id": 91,
+    "word": "incorporate",
+    "phonetic": "/ɪnˈkɔːpəreɪt/",
+    "meaning": "合并；包含",
+    "example": "We need to incorporate the latest research findings."
+  },
+  {
+    "id": 92,
+    "word": "resign",
+    "phonetic": "/rɪˈzaɪn/",
+    "meaning": "辞职；放弃",
+    "example": "She resigned from her position as manager."
+  },
+  {
+    "id": 93,
+    "word": "generate",
+    "phonetic": "/ˈdʒenəreɪt/",
+    "meaning": "产生；生成",
+    "example": "The wind turbines generate electricity."
+  },
+  {
+    "id": 94,
+    "word": "universal",
+    "phonetic": "/ˌjuːnɪˈvɜːsl/",
+    "meaning": "普遍的；全球的",
+    "example": "Education is a universal human right."
+  },
+  {
+    "id": 95,
+    "word": "decline",
+    "phonetic": "/dɪˈklaɪn/",
+    "meaning": "下降；衰退",
+    "example": "The population of the village has declined."
+  },
+  {
+    "id": 96,
+    "word": "inherit",
+    "phonetic": "/ɪnˈherɪt/",
+    "meaning": "继承；遗传",
+    "example": "She inherited her mother's artistic talent."
+  },
+  {
+    "id": 97,
+    "word": "conservation",
+    "phonetic": "/ˌkɒnsəˈveɪʃn/",
+    "meaning": "保护；保存",
+    "example": "Wildlife conservation is crucial for biodiversity."
+  },
+  {
+    "id": 98,
+    "word": "derive",
+    "phonetic": "/dɪˈraɪv/",
+    "meaning": "源于；获得",
+    "example": "The word derives from Latin."
+  },
+  {
+    "id": 99,
+    "word": "explicit",
+    "phonetic": "/ɪkˈsplɪsɪt/",
+    "meaning": "明确的；清楚的",
+    "example": "The instructions were very explicit."
+  },
+  {
+    "id": 100,
+    "word": "install",
+    "phonetic": "/ɪnˈstɔːl/",
+    "meaning": "安装；安置",
+    "example": "We need to install new software on the computer."
+  },
+  {
+    "id": 101,
+    "word": "evidence",
+    "phonetic": "/ˈevɪdəns/",
+    "meaning": "证据；迹象",
+    "example": "There is strong evidence linking smoking to lung cancer."
+  },
+  {
+    "id": 102,
+    "word": "output",
+    "phonetic": "/ˈaʊtpʊt/",
+    "meaning": "产出；输出",
+    "example": "The factory has increased its output by 20%."
+  },
+  {
+    "id": 103,
+    "word": "passive",
+    "phonetic": "/ˈpæsɪv/",
+    "meaning": "被动的；消极的",
+    "example": "He took a passive role in the discussion."
+  },
+  {
+    "id": 104,
+    "word": "logical",
+    "phonetic": "/ˈlɒdʒɪkl/",
+    "meaning": "逻辑的；合理的",
+    "example": "Her argument was clear and logical."
+  },
+  {
+    "id": 105,
+    "word": "academic",
+    "phonetic": "/ˌækəˈdemɪk/",
+    "meaning": "学术的；学院的",
+    "example": "She has a strong academic background in economics."
+  },
+  {
+    "id": 106,
+    "word": "supply",
+    "phonetic": "/səˈplaɪ/",
+    "meaning": "供应；提供",
+    "example": "The company supplies goods to local stores."
+  },
+  {
+    "id": 107,
+    "word": "profit",
+    "phonetic": "/ˈprɒfɪt/",
+    "meaning": "利润；收益",
+    "example": "The company made a good profit this year."
+  },
+  {
+    "id": 108,
+    "word": "presumably",
+    "phonetic": "/prɪˈzjuːməbli/",
+    "meaning": "大概；推测起来",
+    "example": "Presumably, the meeting will start at 9am."
+  },
+  {
+    "id": 109,
+    "word": "overcome",
+    "phonetic": "/ˌəʊvəˈkʌm/",
+    "meaning": "克服；战胜",
+    "example": "She overcame many obstacles to succeed."
+  },
+  {
+    "id": 110,
+    "word": "coordinate",
+    "phonetic": "/kəʊˈɔːdɪneɪt/",
+    "meaning": "协调；调整",
+    "example": "The team needs to coordinate their efforts."
+  },
+  {
+    "id": 111,
+    "word": "advocate",
+    "phonetic": "/ˈædvəkeɪt/",
+    "meaning": "提倡；拥护",
+    "example": "Many environmentalists advocate renewable energy."
+  },
+  {
+    "id": 112,
+    "word": "enable",
+    "phonetic": "/ɪˈneɪbl/",
+    "meaning": "使能够；使可能",
+    "example": "The scholarship enabled her to study abroad."
+  },
+  {
+    "id": 113,
+    "word": "dedicate",
+    "phonetic": "/ˈdedɪkeɪt/",
+    "meaning": "致力于；奉献",
+    "example": "She dedicated her life to helping others."
+  },
+  {
+    "id": 114,
+    "word": "capable",
+    "phonetic": "/ˈkeɪpəbl/",
+    "meaning": "有能力的；能够的",
+    "example": "She is capable of handling difficult situations."
+  },
+  {
+    "id": 115,
+    "word": "responsible",
+    "phonetic": "/rɪˈspɒnsəbl/",
+    "meaning": "负责的；有责任的",
+    "example": "The pilot is responsible for the safety of passengers."
+  },
+  {
+    "id": 116,
+    "word": "exchange",
+    "phonetic": "/ɪksˈtʃeɪndʒ/",
+    "meaning": "交换；兑换",
+    "example": "We exchanged ideas during the meeting."
+  },
+  {
+    "id": 117,
+    "word": "limit",
+    "phonetic": "/ˈlɪmɪt/",
+    "meaning": "限制；限度",
+    "example": "There is a limit to what we can achieve."
+  },
+  {
+    "id": 118,
+    "word": "specific",
+    "phonetic": "/spəˈsɪfɪk/",
+    "meaning": "具体的；特定的",
+    "example": "You need to be more specific about your requirements."
+  },
+  {
+    "id": 119,
+    "word": "sophisticated",
+    "phonetic": "/səˈfɪstɪkeɪtɪd/",
+    "meaning": "复杂的；精密的",
+    "example": "The system is highly sophisticated."
+  },
+  {
+    "id": 120,
+    "word": "relevant",
+    "phonetic": "/ˈreləvənt/",
+    "meaning": "相关的；切题的",
+    "example": "Make sure your answer is relevant to the question."
+  },
+  {
+    "id": 121,
+    "word": "federal",
+    "phonetic": "/ˈfedərəl/",
+    "meaning": "联邦的；联盟的",
+    "example": "The federal government announced new policies."
+  },
+  {
+    "id": 122,
+    "word": "attract",
+    "phonetic": "/əˈtrækt/",
+    "meaning": "吸引；引起",
+    "example": "The museum attracts many visitors every year."
+  },
+  {
+    "id": 123,
+    "word": "execute",
+    "phonetic": "/ˈeksɪkjuːt/",
+    "meaning": "执行；实施",
+    "example": "The plan was executed perfectly."
+  },
+  {
+    "id": 124,
+    "word": "primary",
+    "phonetic": "/ˈpraɪməri/",
+    "meaning": "主要的；初级的",
+    "example": "The primary goal is to reduce costs."
+  },
+  {
+    "id": 125,
+    "word": "facilitate",
+    "phonetic": "/fəˈsɪlɪteɪt/",
+    "meaning": "促进；使便利",
+    "example": "Technology facilitates communication across distances."
+  },
+  {
+    "id": 126,
+    "word": "progress",
+    "phonetic": "/ˈprəʊɡres/",
+    "meaning": "进步；进展",
+    "example": "The student has made excellent progress."
+  },
+  {
+    "id": 127,
+    "word": "prospect",
+    "phonetic": "/ˈprɒspekt/",
+    "meaning": "前景；可能性",
+    "example": "The job prospects in this field are good."
+  },
+  {
+    "id": 128,
+    "word": "schedule",
+    "phonetic": "/ˈʃedjuːl/",
+    "meaning": "时间表；安排",
+    "example": "The flight arrived on schedule."
+  },
+  {
+    "id": 129,
+    "word": "personnel",
+    "phonetic": "/ˌpɜːsəˈnel/",
+    "meaning": "人员；人事",
+    "example": "All personnel must attend the meeting."
+  },
+  {
+    "id": 130,
+    "word": "transparent",
+    "phonetic": "/trænsˈpærənt/",
+    "meaning": "透明的；明显的",
+    "example": "The company needs to be more transparent."
+  },
+  {
+    "id": 131,
+    "word": "feedback",
+    "phonetic": "/ˈfiːdbæk/",
+    "meaning": "反馈；意见",
+    "example": "We received positive feedback from our customers."
+  },
+  {
+    "id": 132,
+    "word": "prevail",
+    "phonetic": "/prɪˈveɪl/",
+    "meaning": "盛行；占优势",
+    "example": "Justice will prevail in the end."
+  },
+  {
+    "id": 133,
+    "word": "reside",
+    "phonetic": "/rɪˈzaɪd/",
+    "meaning": "居住；存在",
+    "example": "The power resides with the people."
+  },
+  {
+    "id": 134,
+    "word": "operate",
+    "phonetic": "/ˈɒpəreɪt/",
+    "meaning": "操作；经营",
+    "example": "The machine operates automatically."
+  },
+  {
+    "id": 135,
+    "word": "legitimate",
+    "phonetic": "/lɪˈdʒɪtɪmət/",
+    "meaning": "合法的；正当的",
+    "example": "Is that a legitimate concern?"
+  },
+  {
+    "id": 136,
+    "word": "classify",
+    "phonetic": "/ˈklæsɪfaɪ/",
+    "meaning": "分类；归类",
+    "example": "The data is classified according to age groups."
+  },
+  {
+    "id": 137,
+    "word": "perspective",
+    "phonetic": "/pəˈspektɪv/",
+    "meaning": "视角；观点",
+    "example": "Try to see the issue from a different perspective."
+  },
+  {
+    "id": 138,
+    "word": "document",
+    "phonetic": "/ˈdɒkjumənt/",
+    "meaning": "文件；记录",
+    "example": "Please sign the document at the bottom."
+  },
+  {
+    "id": 139,
+    "word": "request",
+    "phonetic": "/rɪˈkwest/",
+    "meaning": "请求；要求",
+    "example": "We have received your request for information."
+  },
+  {
+    "id": 140,
+    "word": "medium",
+    "phonetic": "/ˈmiːdiəm/",
+    "meaning": "媒介；中等的",
+    "example": "English is the medium of instruction at the university."
+  },
+  {
+    "id": 141,
+    "word": "locate",
+    "phonetic": "/ləʊˈkeɪt/",
+    "meaning": "找到；位于",
+    "example": "The office is located in the city center."
+  },
+  {
+    "id": 142,
+    "word": "alternative",
+    "phonetic": "/ɔːlˈtɜːnətɪv/",
+    "meaning": "替代的；供选择的",
+    "example": "We need to find alternative sources of energy."
+  },
+  {
+    "id": 143,
+    "word": "motive",
+    "phonetic": "/ˈməʊtɪv/",
+    "meaning": "动机；目的",
+    "example": "What was his motive for the crime?"
+  },
+  {
+    "id": 144,
+    "word": "evaluate",
+    "phonetic": "/ɪˈvæljueɪt/",
+    "meaning": "评估；评价",
+    "example": "We need to evaluate the effectiveness of the program."
+  },
+  {
+    "id": 145,
+    "word": "obtain",
+    "phonetic": "/əbˈteɪn/",
+    "meaning": "获得；得到",
+    "example": "You need to obtain permission before entering."
+  },
+  {
+    "id": 146,
+    "word": "accompany",
+    "phonetic": "/əˈkʌmpəni/",
+    "meaning": "陪伴；伴随",
+    "example": "The text is accompanied by detailed illustrations."
+  },
+  {
+    "id": 147,
+    "word": "intelligent",
+    "phonetic": "/ɪnˈtelɪdʒənt/",
+    "meaning": "聪明的；有智慧的",
+    "example": "Dolphins are highly intelligent animals."
+  },
+  {
+    "id": 148,
+    "word": "fundamental",
+    "phonetic": "/ˌfʌndəˈmentl/",
+    "meaning": "基本的；根本的",
+    "example": "There is a fundamental difference between the two theories."
+  },
+  {
+    "id": 149,
+    "word": "legislation",
+    "phonetic": "/ˌledʒɪsˈleɪʃn/",
+    "meaning": "立法；法规",
+    "example": "New legislation has been passed to protect the environment."
+  },
+  {
+    "id": 150,
+    "word": "accurate",
+    "phonetic": "/ˈækjərət/",
+    "meaning": "准确的；精确的",
+    "example": "It is important to provide accurate information."
+  },
+  {
+    "id": 151,
+    "word": "inspire",
+    "phonetic": "/ɪnˈspaɪə/",
+    "meaning": "激励；启发",
+    "example": "Her speech inspired the audience to take action."
+  },
+  {
+    "id": 152,
+    "word": "profound",
+    "phonetic": "/prəˈfaʊnd/",
+    "meaning": "深刻的；深远的",
+    "example": "The experience had a profound effect on her."
+  },
+  {
+    "id": 153,
+    "word": "artificial",
+    "phonetic": "/ˌɑːtɪˈfɪʃl/",
+    "meaning": "人工的；人造的",
+    "example": "Artificial intelligence is transforming many industries."
+  },
+  {
+    "id": 154,
+    "word": "administration",
+    "phonetic": "/ədˌmɪnɪˈstreɪʃn/",
+    "meaning": "管理；行政",
+    "example": "She works in the administration department."
+  },
+  {
+    "id": 155,
+    "word": "economy",
+    "phonetic": "/ɪˈkɒnəmi/",
+    "meaning": "经济；节约",
+    "example": "The economy is showing signs of recovery."
+  },
+  {
+    "id": 156,
+    "word": "network",
+    "phonetic": "/ˈnetwɜːk/",
+    "meaning": "网络；关系网",
+    "example": "The company has a wide distribution network."
+  },
+  {
+    "id": 157,
+    "word": "distinct",
+    "phonetic": "/dɪˈstɪŋkt/",
+    "meaning": "明显的；不同的",
+    "example": "There is a distinct improvement in your writing."
+  },
+  {
+    "id": 158,
+    "word": "attitude",
+    "phonetic": "/ˈætɪtjuːd/",
+    "meaning": "态度；看法",
+    "example": "His positive attitude helped the team succeed."
+  },
+  {
+    "id": 159,
+    "word": "assign",
+    "phonetic": "/əˈsaɪn/",
+    "meaning": "分配；指派",
+    "example": "Each student was assigned a different topic."
+  },
+  {
+    "id": 160,
+    "word": "restrict",
+    "phonetic": "/rɪˈstrɪkt/",
+    "meaning": "限制；约束",
+    "example": "Access to the area is restricted."
+  },
+  {
+    "id": 161,
+    "word": "initial",
+    "phonetic": "/ɪˈnɪʃl/",
+    "meaning": "最初的；初始的",
+    "example": "The initial results were promising."
+  },
+  {
+    "id": 162,
+    "word": "previous",
+    "phonetic": "/ˈpriːviəs/",
+    "meaning": "先前的；以前的",
+    "example": "In her previous job, she worked as a teacher."
+  },
+  {
+    "id": 163,
+    "word": "inspect",
+    "phonetic": "/ɪnˈspekt/",
+    "meaning": "检查；审视",
+    "example": "The building was inspected for safety."
+  },
+  {
+    "id": 164,
+    "word": "professional",
+    "phonetic": "/prəˈfeʃənl/",
+    "meaning": "专业的；职业的",
+    "example": "She maintains a high level of professionalism."
+  },
+  {
+    "id": 165,
+    "word": "massive",
+    "phonetic": "/ˈmæsɪv/",
+    "meaning": "大量的；大规模的",
+    "example": "The project requires a massive investment."
+  },
+  {
+    "id": 166,
+    "word": "unique",
+    "phonetic": "/juˈniːk/",
+    "meaning": "独特的；唯一的",
+    "example": "Everyone has unique talents."
+  },
+  {
+    "id": 167,
+    "word": "scheme",
+    "phonetic": "/skiːm/",
+    "meaning": "方案；计划",
+    "example": "The government launched a new housing scheme."
+  },
+  {
+    "id": 168,
+    "word": "potential",
+    "phonetic": "/pəˈtenʃl/",
+    "meaning": "潜在的；潜力",
+    "example": "The new technology has great potential."
+  },
+  {
+    "id": 169,
+    "word": "process",
+    "phonetic": "/ˈprəʊses/",
+    "meaning": "过程；处理",
+    "example": "The application process takes about two weeks."
+  },
+  {
+    "id": 170,
+    "word": "military",
+    "phonetic": "/ˈmɪlətri/",
+    "meaning": "军事的；军队",
+    "example": "He served in the military for ten years."
+  },
+  {
+    "id": 171,
+    "word": "impose",
+    "phonetic": "/ɪmˈpəʊz/",
+    "meaning": "强加；征收",
+    "example": "The government imposed a tax on luxury goods."
+  },
+  {
+    "id": 172,
+    "word": "notion",
+    "phonetic": "/ˈnəʊʃn/",
+    "meaning": "概念；观念",
+    "example": "The notion of freedom is important to many people."
+  },
+  {
+    "id": 173,
+    "word": "minimum",
+    "phonetic": "/ˈmɪnɪməm/",
+    "meaning": "最小的；最低限度",
+    "example": "You need a minimum of three years' experience."
+  },
+  {
+    "id": 174,
+    "word": "attempt",
+    "phonetic": "/əˈtempt/",
+    "meaning": "尝试；企图",
+    "example": "She made an attempt to solve the puzzle."
+  },
+  {
+    "id": 175,
+    "word": "passion",
+    "phonetic": "/ˈpæʃn/",
+    "meaning": "激情；热情",
+    "example": "She has a passion for music."
+  },
+  {
+    "id": 176,
+    "word": "maximum",
+    "phonetic": "/ˈmæksɪməm/",
+    "meaning": "最大的；最高点",
+    "example": "The car reached its maximum speed."
+  },
+  {
+    "id": 177,
+    "word": "collapse",
+    "phonetic": "/kəˈlæps/",
+    "meaning": "倒塌；崩溃",
+    "example": "The building collapsed after the earthquake."
+  },
+  {
+    "id": 178,
+    "word": "admit",
+    "phonetic": "/ədˈmɪt/",
+    "meaning": "承认；准许进入",
+    "example": "He admitted that he was wrong."
+  },
+  {
+    "id": 179,
+    "word": "compose",
+    "phonetic": "/kəmˈpəʊz/",
+    "meaning": "组成；创作",
+    "example": "The committee is composed of twelve members."
+  },
+  {
+    "id": 180,
+    "word": "factor",
+    "phonetic": "/ˈfæktə/",
+    "meaning": "因素；要素",
+    "example": "Cost was a major factor in the decision."
+  },
+  {
+    "id": 181,
+    "word": "react",
+    "phonetic": "/riˈækt/",
+    "meaning": "反应；回应",
+    "example": "How did he react to the news?"
+  },
+  {
+    "id": 182,
+    "word": "imply",
+    "phonetic": "/ɪmˈplaɪ/",
+    "meaning": "暗示；意味着",
+    "example": "What are you implying by that statement?"
+  },
+  {
+    "id": 183,
+    "word": "avoid",
+    "phonetic": "/əˈvɔɪd/",
+    "meaning": "避免；回避",
+    "example": "You should avoid eating too much sugar."
+  },
+  {
+    "id": 184,
+    "word": "application",
+    "phonetic": "/ˌæplɪˈkeɪʃn/",
+    "meaning": "应用；申请",
+    "example": "The application of this theory is quite broad."
+  },
+  {
+    "id": 185,
+    "word": "remain",
+    "phonetic": "/rɪˈmeɪn/",
+    "meaning": "保持；剩余",
+    "example": "The situation remains uncertain."
+  },
+  {
+    "id": 186,
+    "word": "attach",
+    "phonetic": "/əˈtætʃ/",
+    "meaning": "附上；连接",
+    "example": "Please attach the file to your email."
+  },
+  {
+    "id": 187,
+    "word": "negative",
+    "phonetic": "/ˈneɡətɪv/",
+    "meaning": "消极的；否定的",
+    "example": "The feedback was mostly negative."
+  },
+  {
+    "id": 188,
+    "word": "reluctant",
+    "phonetic": "/rɪˈlʌktənt/",
+    "meaning": "不情愿的；勉强的",
+    "example": "She was reluctant to admit her mistake."
+  },
+  {
+    "id": 189,
+    "word": "range",
+    "phonetic": "/reɪndʒ/",
+    "meaning": "范围；幅度",
+    "example": "The hotel offers a wide range of services."
+  },
+  {
+    "id": 190,
+    "word": "stress",
+    "phonetic": "/stres/",
+    "meaning": "压力；强调",
+    "example": "The teacher stressed the importance of practice."
+  },
+  {
+    "id": 191,
+    "word": "achieve",
+    "phonetic": "/əˈtʃiːv/",
+    "meaning": "达到；取得",
+    "example": "She worked hard to achieve her goals."
+  },
+  {
+    "id": 192,
+    "word": "temporary",
+    "phonetic": "/ˈtemprəri/",
+    "meaning": "临时的；暂时的",
+    "example": "He found a temporary job."
+  },
+  {
+    "id": 193,
+    "word": "outcome",
+    "phonetic": "/ˈaʊtkʌm/",
+    "meaning": "结果；成果",
+    "example": "The outcome of the election was unexpected."
+  },
+  {
+    "id": 194,
+    "word": "period",
+    "phonetic": "/ˈpɪəriəd/",
+    "meaning": "时期；阶段",
+    "example": "The project will last for a period of six months."
+  },
+  {
+    "id": 195,
+    "word": "identify",
+    "phonetic": "/aɪˈdentɪfaɪ/",
+    "meaning": "识别；确认",
+    "example": "Researchers identified a new species of plant."
+  },
+  {
+    "id": 196,
+    "word": "persist",
+    "phonetic": "/pəˈsɪst/",
+    "meaning": "坚持；持续",
+    "example": "If symptoms persist, consult your doctor."
+  },
+  {
+    "id": 197,
+    "word": "overall",
+    "phonetic": "/ˌəʊvərˈɔːl/",
+    "meaning": "全面的；总体",
+    "example": "The overall cost of the project was reasonable."
+  },
+  {
+    "id": 198,
+    "word": "imitate",
+    "phonetic": "/ˈɪmɪteɪt/",
+    "meaning": "模仿；仿效",
+    "example": "Children often imitate the behavior of adults."
+  },
+  {
+    "id": 199,
+    "word": "interfere",
+    "phonetic": "/ˌɪntəˈfɪə/",
+    "meaning": "干涉；干扰",
+    "example": "Don't interfere with other people's business."
+  },
+  {
+    "id": 200,
+    "word": "accelerate",
+    "phonetic": "/əkˈseləreɪt/",
+    "meaning": "加速；促进",
+    "example": "Climate change is accelerating at an alarming rate."
+  },
+  {
+    "id": 201,
+    "word": "definite",
+    "phonetic": "/ˈdefɪnət/",
+    "meaning": "明确的；确定的",
+    "example": "We need a definite answer by tomorrow."
+  },
+  {
+    "id": 202,
+    "word": "separate",
+    "phonetic": "/ˈseprət/",
+    "meaning": "分开的；各自的",
+    "example": "The two sections are separated by a wall."
+  },
+  {
+    "id": 203,
+    "word": "comprehensive",
+    "phonetic": "/ˌkɒmprɪˈhensɪv/",
+    "meaning": "全面的；综合的",
+    "example": "The guide provides comprehensive information about the city."
+  },
+  {
+    "id": 204,
+    "word": "survey",
+    "phonetic": "/ˈsɜːveɪ/",
+    "meaning": "调查；测量",
+    "example": "The survey was conducted online."
+  },
+  {
+    "id": 205,
+    "word": "maintain",
+    "phonetic": "/meɪnˈteɪn/",
+    "meaning": "维持；保养",
+    "example": "It is important to maintain good health."
+  },
+  {
+    "id": 206,
+    "word": "influence",
+    "phonetic": "/ˈɪnfluəns/",
+    "meaning": "影响；势力",
+    "example": "Social media has a strong influence on young people."
+  },
+  {
+    "id": 207,
+    "word": "substitute",
+    "phonetic": "/ˈsʌbstɪtjuːt/",
+    "meaning": "替代；替补",
+    "example": "You can substitute honey for sugar."
+  },
+  {
+    "id": 208,
+    "word": "internal",
+    "phonetic": "/ɪnˈtɜːnl/",
+    "meaning": "内部的；国内的",
+    "example": "The company is conducting an internal investigation."
+  },
+  {
+    "id": 209,
+    "word": "convince",
+    "phonetic": "/kənˈvɪns/",
+    "meaning": "说服；使确信",
+    "example": "She convinced me to take the job."
+  },
+  {
+    "id": 210,
+    "word": "available",
+    "phonetic": "/əˈveɪləbl/",
+    "meaning": "可获得的；有空的",
+    "example": "Tickets are available online."
+  },
+  {
+    "id": 211,
+    "word": "exceed",
+    "phonetic": "/ɪkˈsiːd/",
+    "meaning": "超过；超越",
+    "example": "The cost should not exceed $200."
+  },
+  {
+    "id": 212,
+    "word": "incentive",
+    "phonetic": "/ɪnˈsentɪv/",
+    "meaning": "激励；诱因",
+    "example": "Financial incentives encourage employees to work harder."
+  },
+  {
+    "id": 213,
+    "word": "likely",
+    "phonetic": "/ˈlaɪkli/",
+    "meaning": "可能的；很可能",
+    "example": "It is likely to rain later today."
+  },
+  {
+    "id": 214,
+    "word": "source",
+    "phonetic": "/sɔːs/",
+    "meaning": "来源；出处",
+    "example": "The river has its source in the mountains."
+  },
+  {
+    "id": 215,
+    "word": "refer",
+    "phonetic": "/rɪˈfɜː/",
+    "meaning": "参考；提及",
+    "example": "Please refer to the user manual for details."
+  },
+  {
+    "id": 216,
+    "word": "creative",
+    "phonetic": "/kriˈeɪtɪv/",
+    "meaning": "有创造力的；创新的",
+    "example": "Creative thinking is essential for problem solving."
+  },
+  {
+    "id": 217,
+    "word": "precise",
+    "phonetic": "/prɪˈsaɪs/",
+    "meaning": "精确的；准确的",
+    "example": "You need to take precise measurements."
+  },
+  {
+    "id": 218,
+    "word": "impress",
+    "phonetic": "/ɪmˈpres/",
+    "meaning": "给…留下印象",
+    "example": "She impressed everyone with her presentation."
+  },
+  {
+    "id": 219,
+    "word": "competent",
+    "phonetic": "/ˈkɒmpɪtənt/",
+    "meaning": "有能力的；胜任的",
+    "example": "She is a highly competent lawyer."
+  },
+  {
+    "id": 220,
+    "word": "consistent",
+    "phonetic": "/kənˈsɪstənt/",
+    "meaning": "一致的；始终如一的",
+    "example": "His results have been consistent throughout the year."
+  },
+  {
+    "id": 221,
+    "word": "forthcoming",
+    "phonetic": "/ˌfɔːθˈkʌmɪŋ/",
+    "meaning": "即将到来的；现成的",
+    "example": "We are preparing for the forthcoming election."
+  },
+  {
+    "id": 222,
+    "word": "route",
+    "phonetic": "/ruːt/",
+    "meaning": "路线；途径",
+    "example": "What is the shortest route to the airport?"
+  },
+  {
+    "id": 223,
+    "word": "procedure",
+    "phonetic": "/prəˈsiːdʒə/",
+    "meaning": "程序；步骤",
+    "example": "Follow the correct procedure for registration."
+  },
+  {
+    "id": 224,
+    "word": "duration",
+    "phonetic": "/djuˈreɪʃn/",
+    "meaning": "持续时间；期间",
+    "example": "The course has a duration of three months."
+  },
+  {
+    "id": 225,
+    "word": "estimate",
+    "phonetic": "/ˈestɪmeɪt/",
+    "meaning": "估计；评估",
+    "example": "It is estimated that over 1 billion people speak English."
+  },
+  {
+    "id": 226,
+    "word": "reserve",
+    "phonetic": "/rɪˈzɜːv/",
+    "meaning": "保留；预订",
+    "example": "I would like to reserve a table for two."
+  },
+  {
+    "id": 227,
+    "word": "community",
+    "phonetic": "/kəˈmjuːnəti/",
+    "meaning": "社区；团体",
+    "example": "The local community supported the project."
+  },
+  {
+    "id": 228,
+    "word": "regard",
+    "phonetic": "/rɪˈɡɑːd/",
+    "meaning": "视为；关注",
+    "example": "She is regarded as an expert in her field."
+  },
+  {
+    "id": 229,
+    "word": "resource",
+    "phonetic": "/rɪˈsɔːs/",
+    "meaning": "资源；资料",
+    "example": "The country has abundant natural resources."
+  },
+  {
+    "id": 230,
+    "word": "forecast",
+    "phonetic": "/ˈfɔːkɑːst/",
+    "meaning": "预测；预报",
+    "example": "The weather forecast predicts rain tomorrow."
+  },
+  {
+    "id": 231,
+    "word": "consider",
+    "phonetic": "/kənˈsɪdə/",
+    "meaning": "考虑；认为",
+    "example": "We need to consider all the options."
+  },
+  {
+    "id": 232,
+    "word": "approximate",
+    "phonetic": "/əˈprɒksɪmət/",
+    "meaning": "近似的；大约的",
+    "example": "The approximate cost is around $500."
+  },
+  {
+    "id": 233,
+    "word": "offend",
+    "phonetic": "/əˈfend/",
+    "meaning": "冒犯；得罪",
+    "example": "I didn't mean to offend you."
+  },
+  {
+    "id": 234,
+    "word": "constant",
+    "phonetic": "/ˈkɒnstənt/",
+    "meaning": "持续的；不变的",
+    "example": "The machine runs at a constant speed."
+  },
+  {
+    "id": 235,
+    "word": "ensure",
+    "phonetic": "/ɪnˈʃʊə/",
+    "meaning": "确保；保证",
+    "example": "Please ensure that all doors are locked."
+  },
+  {
+    "id": 236,
+    "word": "extensive",
+    "phonetic": "/ɪkˈstensɪv/",
+    "meaning": "广泛的；大量的",
+    "example": "The research involved extensive fieldwork."
+  },
+  {
+    "id": 237,
+    "word": "secure",
+    "phonetic": "/sɪˈkjʊə/",
+    "meaning": "安全的；获得",
+    "example": "Make sure your passwords are secure."
+  },
+  {
+    "id": 238,
+    "word": "recover",
+    "phonetic": "/rɪˈkʌvə/",
+    "meaning": "恢复；康复",
+    "example": "It took her weeks to recover from the illness."
+  },
+  {
+    "id": 239,
+    "word": "benefit",
+    "phonetic": "/ˈbenɪfɪt/",
+    "meaning": "利益；好处",
+    "example": "Regular exercise has many health benefits."
+  },
+  {
+    "id": 240,
+    "word": "seek",
+    "phonetic": "/siːk/",
+    "meaning": "寻找；寻求",
+    "example": "You should seek professional advice."
+  },
+  {
+    "id": 241,
+    "word": "atmosphere",
+    "phonetic": "/ˈætməsfɪə/",
+    "meaning": "大气；气氛",
+    "example": "The restaurant has a relaxed atmosphere."
+  },
+  {
+    "id": 242,
+    "word": "harsh",
+    "phonetic": "/hɑːʃ/",
+    "meaning": "严酷的；刺耳的",
+    "example": "The climate in the Arctic is very harsh."
+  },
+  {
+    "id": 243,
+    "word": "tendency",
+    "phonetic": "/ˈtendənsi/",
+    "meaning": "趋势；倾向",
+    "example": "There is a growing tendency towards remote work."
+  },
+  {
+    "id": 244,
+    "word": "sympathy",
+    "phonetic": "/ˈsɪmpəθi/",
+    "meaning": "同情；赞同",
+    "example": "I have no sympathy for lazy people."
+  },
+  {
+    "id": 245,
+    "word": "property",
+    "phonetic": "/ˈprɒpəti/",
+    "meaning": "财产；特性",
+    "example": "The building is private property."
+  },
+  {
+    "id": 246,
+    "word": "accommodate",
+    "phonetic": "/əˈkɒmədeɪt/",
+    "meaning": "容纳；为…提供住宿",
+    "example": "The hotel can accommodate up to 300 guests."
+  },
+  {
+    "id": 247,
+    "word": "cooperate",
+    "phonetic": "/kəʊˈɒpəreɪt/",
+    "meaning": "合作；配合",
+    "example": "The two companies agreed to cooperate on the project."
+  },
+  {
+    "id": 248,
+    "word": "average",
+    "phonetic": "/ˈævərɪdʒ/",
+    "meaning": "平均的；普通的",
+    "example": "The average temperature has risen by 1 degree."
+  },
+  {
+    "id": 249,
+    "word": "liberal",
+    "phonetic": "/ˈlɪbərəl/",
+    "meaning": "自由的；开明的",
+    "example": "She holds liberal views on social issues."
+  },
+  {
+    "id": 250,
+    "word": "claim",
+    "phonetic": "/kleɪm/",
+    "meaning": "声称；要求",
+    "example": "The scientist claimed to have made a major discovery."
+  },
+  {
+    "id": 251,
+    "word": "terminal",
+    "phonetic": "/ˈtɜːmɪnl/",
+    "meaning": "终端的；晚期的",
+    "example": "The patient is in the terminal stage of cancer."
+  },
+  {
+    "id": 252,
+    "word": "combine",
+    "phonetic": "/kəmˈbaɪn/",
+    "meaning": "结合；联合",
+    "example": "The course combines theory with practice."
+  },
+  {
+    "id": 253,
+    "word": "reputation",
+    "phonetic": "/ˌrepjuˈteɪʃn/",
+    "meaning": "名声；声誉",
+    "example": "The company has a good reputation."
+  },
+  {
+    "id": 254,
+    "word": "curriculum",
+    "phonetic": "/kəˈrɪkjələm/",
+    "meaning": "课程；全部课程",
+    "example": "The curriculum includes both theory and practical work."
+  },
+  {
+    "id": 255,
+    "word": "improve",
+    "phonetic": "/ɪmˈpruːv/",
+    "meaning": "改善；提高",
+    "example": "Regular exercise can improve your health."
+  },
+  {
+    "id": 256,
+    "word": "efficient",
+    "phonetic": "/ɪˈfɪʃnt/",
+    "meaning": "高效的；有效率的",
+    "example": "The new system is much more efficient."
+  },
+  {
+    "id": 257,
+    "word": "complex",
+    "phonetic": "/ˈkɒmpleks/",
+    "meaning": "复杂的；综合的",
+    "example": "The problem is more complex than it appears."
+  },
+  {
+    "id": 258,
+    "word": "prohibit",
+    "phonetic": "/prəˈhɪbɪt/",
+    "meaning": "禁止；阻止",
+    "example": "Smoking is prohibited in public buildings."
+  },
+  {
+    "id": 259,
+    "word": "convention",
+    "phonetic": "/kənˈvenʃn/",
+    "meaning": "惯例；大会",
+    "example": "By convention, the meeting starts with an introduction."
+  },
+  {
+    "id": 260,
+    "word": "organize",
+    "phonetic": "/ˈɔːɡənaɪz/",
+    "meaning": "组织；安排",
+    "example": "She helped organize the event."
+  },
+  {
+    "id": 261,
+    "word": "adequate",
+    "phonetic": "/ˈædɪkwət/",
+    "meaning": "足够的；适当的",
+    "example": "The supply is not adequate to meet the demand."
+  },
+  {
+    "id": 262,
+    "word": "sufficient",
+    "phonetic": "/səˈfɪʃnt/",
+    "meaning": "足够的；充分的",
+    "example": "One hour should be sufficient for the task."
+  },
+  {
+    "id": 263,
+    "word": "interpret",
+    "phonetic": "/ɪnˈtɜːprɪt/",
+    "meaning": "解释；口译",
+    "example": "How do you interpret these findings?"
+  },
+  {
+    "id": 264,
+    "word": "reform",
+    "phonetic": "/rɪˈfɔːm/",
+    "meaning": "改革；革新",
+    "example": "The government announced education reforms."
+  },
+  {
+    "id": 265,
+    "word": "decade",
+    "phonetic": "/ˈdekeɪd/",
+    "meaning": "十年",
+    "example": "The city has changed a lot over the past decade."
+  },
+  {
+    "id": 266,
+    "word": "feature",
+    "phonetic": "/ˈfiːtʃə/",
+    "meaning": "特征；特色",
+    "example": "The phone has many advanced features."
+  },
+  {
+    "id": 267,
+    "word": "survive",
+    "phonetic": "/səˈvaɪv/",
+    "meaning": "幸存；生存",
+    "example": "Only a few species survived the extinction."
+  },
+  {
+    "id": 268,
+    "word": "fluctuate",
+    "phonetic": "/ˈflʌktʃueɪt/",
+    "meaning": "波动；变动",
+    "example": "Stock prices fluctuate throughout the day."
+  },
+  {
+    "id": 269,
+    "word": "phase",
+    "phonetic": "/feɪz/",
+    "meaning": "阶段；时期",
+    "example": "The first phase of the project is complete."
+  },
+  {
+    "id": 270,
+    "word": "isolate",
+    "phonetic": "/ˈaɪsəleɪt/",
+    "meaning": "隔离；孤立",
+    "example": "The patient was isolated to prevent the spread of infection."
+  },
+  {
+    "id": 271,
+    "word": "capacity",
+    "phonetic": "/kəˈpæsəti/",
+    "meaning": "容量；能力",
+    "example": "The hall has a seating capacity of 500."
+  },
+  {
+    "id": 272,
+    "word": "innovate",
+    "phonetic": "/ˈɪnəveɪt/",
+    "meaning": "创新；革新",
+    "example": "Companies must innovate to stay competitive."
+  },
+  {
+    "id": 273,
+    "word": "access",
+    "phonetic": "/ˈækses/",
+    "meaning": "进入；使用权",
+    "example": "Students have free access to the library resources."
+  },
+  {
+    "id": 274,
+    "word": "contribute",
+    "phonetic": "/kənˈtrɪbjuːt/",
+    "meaning": "贡献；捐献",
+    "example": "Everyone should contribute to protecting the environment."
+  },
+  {
+    "id": 275,
+    "word": "occupy",
+    "phonetic": "/ˈɒkjupaɪ/",
+    "meaning": "占据；占领",
+    "example": "The building now occupies the entire block."
+  },
+  {
+    "id": 276,
+    "word": "margin",
+    "phonetic": "/ˈmɑːdʒɪn/",
+    "meaning": "边缘；利润",
+    "example": "The company operates on a small profit margin."
+  },
+  {
+    "id": 277,
+    "word": "diverse",
+    "phonetic": "/daɪˈvɜːs/",
+    "meaning": "多样的；不同的",
+    "example": "The city has a diverse population."
+  },
+  {
+    "id": 278,
+    "word": "pressure",
+    "phonetic": "/ˈpreʃə/",
+    "meaning": "压力；压迫",
+    "example": "Many people feel pressure at work."
+  },
+  {
+    "id": 279,
+    "word": "acknowledge",
+    "phonetic": "/əkˈnɒlɪdʒ/",
+    "meaning": "承认；确认",
+    "example": "He acknowledged that he had made a mistake."
+  },
+  {
+    "id": 280,
+    "word": "demonstrate",
+    "phonetic": "/ˈdemənstreɪt/",
+    "meaning": "证明；示范",
+    "example": "The experiment demonstrates the principle of gravity."
+  },
+  {
+    "id": 281,
+    "word": "communicate",
+    "phonetic": "/kəˈmjuːnɪkeɪt/",
+    "meaning": "交流；沟通",
+    "example": "Effective managers communicate clearly with their teams."
+  },
+  {
+    "id": 282,
+    "word": "extract",
+    "phonetic": "/ˈekstrækt/",
+    "meaning": "提取；摘录",
+    "example": "The data was extracted from various sources."
+  },
+  {
+    "id": 283,
+    "word": "determine",
+    "phonetic": "/dɪˈtɜːmɪn/",
+    "meaning": "决定；确定",
+    "example": "The results will determine our next steps."
+  },
+  {
+    "id": 284,
+    "word": "foundation",
+    "phonetic": "/faʊnˈdeɪʃn/",
+    "meaning": "基础；基金会",
+    "example": "A good education provides a solid foundation for life."
+  },
+  {
+    "id": 285,
+    "word": "notable",
+    "phonetic": "/ˈnəʊtəbl/",
+    "meaning": "显著的；著名的",
+    "example": "She made a notable contribution to the field."
+  },
+  {
+    "id": 286,
+    "word": "regulate",
+    "phonetic": "/ˈreɡjuleɪt/",
+    "meaning": "管理；调节",
+    "example": "The government regulates the banking industry."
+  },
+  {
+    "id": 287,
+    "word": "opponent",
+    "phonetic": "/əˈpəʊnənt/",
+    "meaning": "对手；反对者",
+    "example": "She defeated her opponent in the debate."
+  },
+  {
+    "id": 288,
+    "word": "gradual",
+    "phonetic": "/ˈɡrædʒuəl/",
+    "meaning": "逐渐的；渐进的",
+    "example": "There has been a gradual increase in temperature."
+  },
+  {
+    "id": 289,
+    "word": "invade",
+    "phonetic": "/ɪnˈveɪd/",
+    "meaning": "入侵；侵犯",
+    "example": "The army invaded the neighboring country."
+  },
+  {
+    "id": 290,
+    "word": "register",
+    "phonetic": "/ˈredʒɪstə/",
+    "meaning": "登记；注册",
+    "example": "You need to register for the course online."
+  },
+  {
+    "id": 291,
+    "word": "trend",
+    "phonetic": "/trend/",
+    "meaning": "趋势；潮流",
+    "example": "The trend towards urbanization continues."
+  },
+  {
+    "id": 292,
+    "word": "individual",
+    "phonetic": "/ˌɪndɪˈvɪdʒuəl/",
+    "meaning": "个人的；个体",
+    "example": "Each individual has their own unique talents."
+  },
+  {
+    "id": 293,
+    "word": "finance",
+    "phonetic": "/ˈfaɪnæns/",
+    "meaning": "财务；金融",
+    "example": "She works in the finance department."
+  },
+  {
+    "id": 294,
+    "word": "indicate",
+    "phonetic": "/ˈɪndɪkeɪt/",
+    "meaning": "表明；指示",
+    "example": "The results indicate that the treatment is effective."
+  },
+  {
+    "id": 295,
+    "word": "permit",
+    "phonetic": "/pəˈmɪt/",
+    "meaning": "允许；许可",
+    "example": "Smoking is not permitted in this area."
+  },
+  {
+    "id": 296,
+    "word": "image",
+    "phonetic": "/ˈɪmɪdʒ/",
+    "meaning": "图像；形象",
+    "example": "The company is trying to improve its public image."
+  },
+  {
+    "id": 297,
+    "word": "method",
+    "phonetic": "/ˈmeθəd/",
+    "meaning": "方法；方式",
+    "example": "We need to find a more efficient method."
+  },
+  {
+    "id": 298,
+    "word": "cease",
+    "phonetic": "/siːs/",
+    "meaning": "停止；终止",
+    "example": "The company has ceased production of that model."
+  },
+  {
+    "id": 299,
+    "word": "priority",
+    "phonetic": "/praɪˈɒrəti/",
+    "meaning": "优先；优先权",
+    "example": "Safety should be our top priority."
+  },
+  {
+    "id": 300,
+    "word": "incline",
+    "phonetic": "/ɪnˈklaɪn/",
+    "meaning": "倾斜；倾向",
+    "example": "I incline to the view that we should wait."
+  },
+  {
+    "id": 301,
+    "word": "reflect",
+    "phonetic": "/rɪˈflekt/",
+    "meaning": "反映；反射",
+    "example": "The results reflect the students' hard work."
+  },
+  {
+    "id": 302,
+    "word": "impact",
+    "phonetic": "/ˈɪmpækt/",
+    "meaning": "影响；冲击",
+    "example": "The internet has had a huge impact on our lives."
+  },
+  {
+    "id": 303,
+    "word": "restore",
+    "phonetic": "/rɪˈstɔː/",
+    "meaning": "恢复；修复",
+    "example": "The building has been restored to its original condition."
+  },
+  {
+    "id": 304,
+    "word": "hypothesis",
+    "phonetic": "/haɪˈpɒθəsɪs/",
+    "meaning": "假设；假说",
+    "example": "The scientist tested her hypothesis with experiments."
+  },
+  {
+    "id": 305,
+    "word": "reinforce",
+    "phonetic": "/ˌriːɪnˈfɔːs/",
+    "meaning": "加强；加固",
+    "example": "The evidence reinforces our argument."
+  },
+  {
+    "id": 306,
+    "word": "mature",
+    "phonetic": "/məˈtʃʊə/",
+    "meaning": "成熟的；成年",
+    "example": "She has become more mature over the years."
+  },
+  {
+    "id": 307,
+    "word": "participate",
+    "phonetic": "/pɑːˈtɪsɪpeɪt/",
+    "meaning": "参加；参与",
+    "example": "Everyone is encouraged to participate."
+  },
+  {
+    "id": 308,
+    "word": "optimistic",
+    "phonetic": "/ˌɒptɪˈmɪstɪk/",
+    "meaning": "乐观的；积极的",
+    "example": "She remains optimistic about the future."
+  },
+  {
+    "id": 309,
+    "word": "domestic",
+    "phonetic": "/dəˈmestɪk/",
+    "meaning": "国内的；家庭的",
+    "example": "The airline operates both domestic and international flights."
+  },
+  {
+    "id": 310,
+    "word": "oppose",
+    "phonetic": "/əˈpəʊz/",
+    "meaning": "反对；对抗",
+    "example": "Many people oppose the new policy."
+  },
+  {
+    "id": 311,
+    "word": "suspect",
+    "phonetic": "/səˈspekt/",
+    "meaning": "怀疑；嫌疑犯",
+    "example": "The police suspect he is lying."
+  },
+  {
+    "id": 312,
+    "word": "manipulate",
+    "phonetic": "/məˈnɪpjuleɪt/",
+    "meaning": "操纵；控制",
+    "example": "The data was manipulated to support the argument."
+  },
+  {
+    "id": 313,
+    "word": "retain",
+    "phonetic": "/rɪˈteɪn/",
+    "meaning": "保留；保持",
+    "example": "The company managed to retain its best employees."
+  },
+  {
+    "id": 314,
+    "word": "revise",
+    "phonetic": "/rɪˈvaɪz/",
+    "meaning": "修订；复习",
+    "example": "You should revise your essay before submitting it."
+  },
+  {
+    "id": 315,
+    "word": "compare",
+    "phonetic": "/kəmˈpeə/",
+    "meaning": "比较；对比",
+    "example": "The report compares living standards across different countries."
+  },
+  {
+    "id": 316,
+    "word": "compete",
+    "phonetic": "/kəmˈpiːt/",
+    "meaning": "竞争；比赛",
+    "example": "Companies compete for market share."
+  },
+  {
+    "id": 317,
+    "word": "analyse",
+    "phonetic": "/ˈænəlaɪz/",
+    "meaning": "分析；解析",
+    "example": "The data was analysed using statistical methods."
+  },
+  {
+    "id": 318,
+    "word": "exclude",
+    "phonetic": "/ɪkˈskluːd/",
+    "meaning": "排除；排斥",
+    "example": "The price excludes shipping costs."
+  },
+  {
+    "id": 319,
+    "word": "conflict",
+    "phonetic": "/ˈkɒnflɪkt/",
+    "meaning": "冲突；矛盾",
+    "example": "The two countries have been in conflict for decades."
+  },
+  {
+    "id": 320,
+    "word": "rebel",
+    "phonetic": "/ˈrebl/",
+    "meaning": "反叛；叛逆",
+    "example": "Teenagers often rebel against authority."
+  },
+  {
+    "id": 321,
+    "word": "remove",
+    "phonetic": "/rɪˈmuːv/",
+    "meaning": "移除；消除",
+    "example": "Please remove your shoes before entering."
+  },
+  {
+    "id": 322,
+    "word": "extreme",
+    "phonetic": "/ɪkˈstriːm/",
+    "meaning": "极端的；极度的",
+    "example": "Extreme weather events are becoming more common."
+  },
+  {
+    "id": 323,
+    "word": "rapid",
+    "phonetic": "/ˈræpɪd/",
+    "meaning": "迅速的；快速的",
+    "example": "The city has experienced rapid growth."
+  },
+  {
+    "id": 324,
+    "word": "ability",
+    "phonetic": "/əˈbɪləti/",
+    "meaning": "能力；才能",
+    "example": "The test measures your ability to communicate in English."
+  },
+  {
+    "id": 325,
+    "word": "evolve",
+    "phonetic": "/ɪˈvɒlv/",
+    "meaning": "进化；演变",
+    "example": "The technology has evolved rapidly over the past decade."
+  },
+  {
+    "id": 326,
+    "word": "political",
+    "phonetic": "/pəˈlɪtɪkl/",
+    "meaning": "政治的；政党的",
+    "example": "The country is going through a political crisis."
+  },
+  {
+    "id": 327,
+    "word": "companion",
+    "phonetic": "/kəmˈpænjən/",
+    "meaning": "同伴；伴侣",
+    "example": "Dogs make wonderful companions."
+  },
+  {
+    "id": 328,
+    "word": "inevitable",
+    "phonetic": "/ɪnˈevɪtəbl/",
+    "meaning": "不可避免的",
+    "example": "Change is inevitable in any organization."
+  },
+  {
+    "id": 329,
+    "word": "protect",
+    "phonetic": "/prəˈtekt/",
+    "meaning": "保护；防护",
+    "example": "Sunscreen protects your skin from the sun."
+  },
+  {
+    "id": 330,
+    "word": "rational",
+    "phonetic": "/ˈræʃnəl/",
+    "meaning": "理性的；合理的",
+    "example": "We need to make a rational decision."
+  },
+  {
+    "id": 331,
+    "word": "structure",
+    "phonetic": "/ˈstrʌktʃə/",
+    "meaning": "结构；构造",
+    "example": "The essay has a clear structure."
+  },
+  {
+    "id": 332,
+    "word": "prefer",
+    "phonetic": "/prɪˈfɜː/",
+    "meaning": "更喜欢；偏好",
+    "example": "I prefer coffee over tea."
+  },
+  {
+    "id": 333,
+    "word": "absorb",
+    "phonetic": "/əbˈzɔːb/",
+    "meaning": "吸收；吸引",
+    "example": "Plants absorb carbon dioxide from the atmosphere."
+  },
+  {
+    "id": 334,
+    "word": "preliminary",
+    "phonetic": "/prɪˈlɪmɪnəri/",
+    "meaning": "初步的；预备的",
+    "example": "The preliminary results are encouraging."
+  },
+  {
+    "id": 335,
+    "word": "prompt",
+    "phonetic": "/prɒmpt/",
+    "meaning": "促使；提示",
+    "example": "The question prompted a lively discussion."
+  },
+  {
+    "id": 336,
+    "word": "migrate",
+    "phonetic": "/maɪˈɡreɪt/",
+    "meaning": "迁移；迁徙",
+    "example": "These birds migrate south for the winter."
+  },
+  {
+    "id": 337,
+    "word": "thorough",
+    "phonetic": "/ˈθʌrə/",
+    "meaning": "彻底的；全面的",
+    "example": "The police conducted a thorough investigation."
+  },
+  {
+    "id": 338,
+    "word": "emerge",
+    "phonetic": "/ɪˈmɜːdʒ/",
+    "meaning": "出现；浮现",
+    "example": "New evidence has emerged in the case."
+  },
+  {
+    "id": 339,
+    "word": "remote",
+    "phonetic": "/rɪˈməʊt/",
+    "meaning": "遥远的；偏僻的",
+    "example": "They live in a remote village."
+  },
+  {
+    "id": 340,
+    "word": "cultivate",
+    "phonetic": "/ˈkʌltɪveɪt/",
+    "meaning": "培养；耕作",
+    "example": "It takes time to cultivate good habits."
+  },
+  {
+    "id": 341,
+    "word": "remedy",
+    "phonetic": "/ˈremədi/",
+    "meaning": "补救；治疗方法",
+    "example": "There is no simple remedy for the problem."
+  },
+  {
+    "id": 342,
+    "word": "revolution",
+    "phonetic": "/ˌrevəˈluːʃn/",
+    "meaning": "革命；变革",
+    "example": "The industrial revolution changed society."
+  },
+  {
+    "id": 343,
+    "word": "circumstance",
+    "phonetic": "/ˈsɜːkəmstəns/",
+    "meaning": "环境；情况",
+    "example": "Under no circumstances should you lie."
+  },
+  {
+    "id": 344,
+    "word": "portion",
+    "phonetic": "/ˈpɔːʃn/",
+    "meaning": "部分；份额",
+    "example": "A large portion of the budget is spent on education."
+  },
+  {
+    "id": 345,
+    "word": "affect",
+    "phonetic": "/əˈfekt/",
+    "meaning": "影响；感动",
+    "example": "The weather affects crop production."
+  },
+  {
+    "id": 346,
+    "word": "rely",
+    "phonetic": "/rɪˈlaɪ/",
+    "meaning": "依赖；信赖",
+    "example": "Many people rely on public transport."
+  },
+  {
+    "id": 347,
+    "word": "supplement",
+    "phonetic": "/ˈsʌplɪmənt/",
+    "meaning": "补充；增补",
+    "example": "Exercise supplements a healthy diet."
+  },
+  {
+    "id": 348,
+    "word": "phenomenon",
+    "phonetic": "/fəˈnɒmɪnən/",
+    "meaning": "现象",
+    "example": "Globalization is a complex phenomenon."
+  },
+  {
+    "id": 349,
+    "word": "consult",
+    "phonetic": "/kənˈsʌlt/",
+    "meaning": "咨询；查阅",
+    "example": "You should consult a doctor if symptoms persist."
+  },
+  {
+    "id": 350,
+    "word": "reduce",
+    "phonetic": "/rɪˈdjuːs/",
+    "meaning": "减少；降低",
+    "example": "We need to reduce our expenses."
+  },
+  {
+    "id": 351,
+    "word": "highlight",
+    "phonetic": "/ˈhaɪlaɪt/",
+    "meaning": "强调；突出",
+    "example": "The report highlights the need for reform."
+  },
+  {
+    "id": 352,
+    "word": "opportunity",
+    "phonetic": "/ˌɒpəˈtjuːnəti/",
+    "meaning": "机会；机遇",
+    "example": "This is a great opportunity to learn."
+  },
+  {
+    "id": 353,
+    "word": "trigger",
+    "phonetic": "/ˈtrɪɡə/",
+    "meaning": "触发；引发",
+    "example": "The incident triggered a public debate."
+  },
+  {
+    "id": 354,
+    "word": "senior",
+    "phonetic": "/ˈsiːniə/",
+    "meaning": "高级的；年长的",
+    "example": "She holds a senior position in the company."
+  },
+  {
+    "id": 355,
+    "word": "simulate",
+    "phonetic": "/ˈsɪmjuleɪt/",
+    "meaning": "模拟；模仿",
+    "example": "The software simulates real driving conditions."
+  },
+  {
+    "id": 356,
+    "word": "dramatic",
+    "phonetic": "/drəˈmætɪk/",
+    "meaning": "巨大的；戏剧性的",
+    "example": "There has been a dramatic increase in sales."
+  },
+  {
+    "id": 357,
+    "word": "standard",
+    "phonetic": "/ˈstændəd/",
+    "meaning": "标准；水准",
+    "example": "The product meets international standards."
+  },
+  {
+    "id": 358,
+    "word": "global",
+    "phonetic": "/ˈɡləʊbl/",
+    "meaning": "全球的；全面的",
+    "example": "Global warming is a serious issue."
+  },
+  {
+    "id": 359,
+    "word": "respond",
+    "phonetic": "/rɪˈspɒnd/",
+    "meaning": "回答；回应",
+    "example": "He failed to respond to the invitation."
+  },
+  {
+    "id": 360,
+    "word": "territory",
+    "phonetic": "/ˈterətri/",
+    "meaning": "领土；领域",
+    "example": "The territory was disputed by the two countries."
+  },
+  {
+    "id": 361,
+    "word": "role",
+    "phonetic": "/rəʊl/",
+    "meaning": "角色；作用",
+    "example": "Technology plays an important role in education."
+  },
+  {
+    "id": 362,
+    "word": "approach",
+    "phonetic": "/əˈprəʊtʃ/",
+    "meaning": "方法；接近",
+    "example": "We need a new approach to solve this problem."
+  },
+  {
+    "id": 363,
+    "word": "represent",
+    "phonetic": "/ˌreprɪˈzent/",
+    "meaning": "代表；表示",
+    "example": "The red lines on the map represent roads."
+  },
+  {
+    "id": 364,
+    "word": "controversy",
+    "phonetic": "/kənˈtrɒvəsi/",
+    "meaning": "争议；争论",
+    "example": "The decision caused a lot of controversy."
+  },
+  {
+    "id": 365,
+    "word": "remarkable",
+    "phonetic": "/rɪˈmɑːkəbl/",
+    "meaning": "显著的；非凡的",
+    "example": "She has made remarkable progress."
+  },
+  {
+    "id": 366,
+    "word": "dimension",
+    "phonetic": "/daɪˈmenʃn/",
+    "meaning": "维度；方面",
+    "example": "The problem has several dimensions."
+  },
+  {
+    "id": 367,
+    "word": "excess",
+    "phonetic": "/ɪkˈses/",
+    "meaning": "过量；过剩",
+    "example": "Excess sugar consumption can lead to health problems."
+  },
+  {
+    "id": 368,
+    "word": "neutral",
+    "phonetic": "/ˈnjuːtrəl/",
+    "meaning": "中立的；中性的",
+    "example": "Switzerland remained neutral during the war."
+  },
+  {
+    "id": 369,
+    "word": "radical",
+    "phonetic": "/ˈrædɪkl/",
+    "meaning": "根本的；激进的",
+    "example": "The company needs radical reform."
+  },
+  {
+    "id": 370,
+    "word": "confident",
+    "phonetic": "/ˈkɒnfɪdənt/",
+    "meaning": "自信的；确信的",
+    "example": "She is confident about passing the exam."
+  },
+  {
+    "id": 371,
+    "word": "budget",
+    "phonetic": "/ˈbʌdʒɪt/",
+    "meaning": "预算；经费",
+    "example": "The project was completed within budget."
+  },
+  {
+    "id": 372,
+    "word": "convenient",
+    "phonetic": "/kənˈviːniənt/",
+    "meaning": "方便的；便利的",
+    "example": "Online shopping is very convenient."
+  },
+  {
+    "id": 373,
+    "word": "conscious",
+    "phonetic": "/ˈkɒnʃəs/",
+    "meaning": "有意识的；清醒的",
+    "example": "He was conscious of the risks involved."
+  },
+  {
+    "id": 374,
+    "word": "quantity",
+    "phonetic": "/ˈkwɒntəti/",
+    "meaning": "数量；大量",
+    "example": "The food was served in large quantities."
+  },
+  {
+    "id": 375,
+    "word": "label",
+    "phonetic": "/ˈleɪbl/",
+    "meaning": "标签；标记",
+    "example": "Read the label carefully before using the product."
+  },
+  {
+    "id": 376,
+    "word": "confirm",
+    "phonetic": "/kənˈfɜːm/",
+    "meaning": "确认；证实",
+    "example": "The test results confirmed our suspicions."
+  },
+  {
+    "id": 377,
+    "word": "concrete",
+    "phonetic": "/ˈkɒŋkriːt/",
+    "meaning": "具体的；混凝土",
+    "example": "We need concrete evidence to support our argument."
+  },
+  {
+    "id": 378,
+    "word": "investigate",
+    "phonetic": "/ɪnˈvestɪɡeɪt/",
+    "meaning": "调查；研究",
+    "example": "The police are investigating the crime."
+  },
+  {
+    "id": 379,
+    "word": "exception",
+    "phonetic": "/ɪkˈsepʃn/",
+    "meaning": "例外；除外",
+    "example": "With a few exceptions, the results were satisfactory."
+  },
+  {
+    "id": 380,
+    "word": "crucial",
+    "phonetic": "/ˈkruːʃl/",
+    "meaning": "关键的；决定性的",
+    "example": "Education plays a crucial role in personal development."
+  },
+  {
+    "id": 381,
+    "word": "discipline",
+    "phonetic": "/ˈdɪsəplɪn/",
+    "meaning": "纪律；学科",
+    "example": "Learning a language requires discipline."
+  },
+  {
+    "id": 382,
+    "word": "intrinsic",
+    "phonetic": "/ɪnˈtrɪnsɪk/",
+    "meaning": "内在的；固有的",
+    "example": "There is intrinsic value in education itself."
+  },
+  {
+    "id": 383,
+    "word": "subsequent",
+    "phonetic": "/ˈsʌbsɪkwənt/",
+    "meaning": "随后的；后来的",
+    "example": "Subsequent events proved him right."
+  },
+  {
+    "id": 384,
+    "word": "compensate",
+    "phonetic": "/ˈkɒmpenseɪt/",
+    "meaning": "补偿；赔偿",
+    "example": "The insurance will compensate you for the loss."
+  },
+  {
+    "id": 385,
+    "word": "nevertheless",
+    "phonetic": "/ˌnevəðəˈles/",
+    "meaning": "然而；尽管如此",
+    "example": "The task was difficult; nevertheless, we completed it."
+  },
+  {
+    "id": 386,
+    "word": "examine",
+    "phonetic": "/ɪɡˈzæmɪn/",
+    "meaning": "检查；考察",
+    "example": "The doctor examined the patient carefully."
+  },
+  {
+    "id": 387,
+    "word": "poverty",
+    "phonetic": "/ˈpɒvəti/",
+    "meaning": "贫困；贫穷",
+    "example": "Education is key to overcoming poverty."
+  },
+  {
+    "id": 388,
+    "word": "strategy",
+    "phonetic": "/ˈstrætədʒi/",
+    "meaning": "策略；战略",
+    "example": "We need to develop a long-term strategy."
+  },
+  {
+    "id": 389,
+    "word": "exploit",
+    "phonetic": "/ɪkˈsplɔɪt/",
+    "meaning": "利用；开发",
+    "example": "Companies should not exploit natural resources recklessly."
+  },
+  {
+    "id": 390,
+    "word": "sensitive",
+    "phonetic": "/ˈsensətɪv/",
+    "meaning": "敏感的；灵敏的",
+    "example": "This is a sensitive issue."
+  },
+  {
+    "id": 391,
+    "word": "assume",
+    "phonetic": "/əˈsjuːm/",
+    "meaning": "假设；承担",
+    "example": "Let us assume that the theory is correct."
+  },
+  {
+    "id": 392,
+    "word": "incredible",
+    "phonetic": "/ɪnˈkredəbl/",
+    "meaning": "难以置信的；极好的",
+    "example": "The view from the top was incredible."
+  },
+  {
+    "id": 393,
+    "word": "aspect",
+    "phonetic": "/ˈæspekt/",
+    "meaning": "方面；层面",
+    "example": "We need to consider every aspect of the problem."
+  },
+  {
+    "id": 394,
+    "word": "minor",
+    "phonetic": "/ˈmaɪnə/",
+    "meaning": "次要的；较小的",
+    "example": "The problem is minor and can be easily fixed."
+  },
+  {
+    "id": 395,
+    "word": "emphasis",
+    "phonetic": "/ˈemfəsɪs/",
+    "meaning": "强调；重点",
+    "example": "The school puts great emphasis on academic achievement."
+  },
+  {
+    "id": 396,
+    "word": "reward",
+    "phonetic": "/rɪˈwɔːd/",
+    "meaning": "奖励；回报",
+    "example": "Hard work brings its own rewards."
+  },
+  {
+    "id": 397,
+    "word": "purchase",
+    "phonetic": "/ˈpɜːtʃəs/",
+    "meaning": "购买；采购",
+    "example": "You can purchase tickets online."
+  },
+  {
+    "id": 398,
+    "word": "significant",
+    "phonetic": "/sɪɡˈnɪfɪkənt/",
+    "meaning": "显著的；重要的",
+    "example": "The research produced significant results."
+  },
+  {
+    "id": 399,
+    "word": "export",
+    "phonetic": "/ɪkˈspɔːt/",
+    "meaning": "出口；输出",
+    "example": "The country exports a large amount of oil."
+  },
+  {
+    "id": 400,
+    "word": "proper",
+    "phonetic": "/ˈprɒpə/",
+    "meaning": "适当的；正确的",
+    "example": "Make sure you wear proper clothing for the hike."
+  },
+  {
+    "id": 401,
+    "word": "focus",
+    "phonetic": "/ˈfəʊkəs/",
+    "meaning": "集中；焦点",
+    "example": "The report focuses on environmental issues."
+  },
+  {
+    "id": 402,
+    "word": "interact",
+    "phonetic": "/ˌɪntərˈækt/",
+    "meaning": "互动；相互作用",
+    "example": "The teacher encourages students to interact with each other."
+  },
+  {
+    "id": 403,
+    "word": "monitor",
+    "phonetic": "/ˈmɒnɪtə/",
+    "meaning": "监控；监测",
+    "example": "Doctors monitor the patient's condition closely."
+  },
+  {
+    "id": 404,
+    "word": "vulnerable",
+    "phonetic": "/ˈvʌlnərəbl/",
+    "meaning": "脆弱的；易受伤的",
+    "example": "Children are the most vulnerable members of society."
+  },
+  {
+    "id": 405,
+    "word": "mention",
+    "phonetic": "/ˈmenʃn/",
+    "meaning": "提到；提及",
+    "example": "He mentioned that he would be late."
+  },
+  {
+    "id": 406,
+    "word": "suspend",
+    "phonetic": "/səˈspend/",
+    "meaning": "暂停；悬挂",
+    "example": "The flight was suspended due to bad weather."
+  },
+  {
+    "id": 407,
+    "word": "assess",
+    "phonetic": "/əˈses/",
+    "meaning": "评估；评价",
+    "example": "Teachers assess students' progress regularly."
+  },
+  {
+    "id": 408,
+    "word": "policy",
+    "phonetic": "/ˈpɒləsi/",
+    "meaning": "政策；方针",
+    "example": "The company has a strict no-smoking policy."
+  },
+  {
+    "id": 409,
+    "word": "principle",
+    "phonetic": "/ˈprɪnsəpl/",
+    "meaning": "原则；原理",
+    "example": "We must stick to our principles."
+  },
+  {
+    "id": 410,
+    "word": "stable",
+    "phonetic": "/ˈsteɪbl/",
+    "meaning": "稳定的；稳固的",
+    "example": "The patient is in a stable condition."
+  },
+  {
+    "id": 411,
+    "word": "concern",
+    "phonetic": "/kənˈsɜːn/",
+    "meaning": "关心；担忧",
+    "example": "Environmental concerns are growing worldwide."
+  },
+  {
+    "id": 412,
+    "word": "climate",
+    "phonetic": "/ˈklaɪmət/",
+    "meaning": "气候；风气",
+    "example": "Climate change is a global concern."
+  },
+  {
+    "id": 413,
+    "word": "transform",
+    "phonetic": "/trænsˈfɔːm/",
+    "meaning": "改变；转变",
+    "example": "Technology has transformed our lives."
+  },
+  {
+    "id": 414,
+    "word": "discriminate",
+    "phonetic": "/dɪˈskrɪmɪneɪt/",
+    "meaning": "歧视；区分",
+    "example": "It is illegal to discriminate against someone based on their gender."
+  },
+  {
+    "id": 415,
+    "word": "instruct",
+    "phonetic": "/ɪnˈstrʌkt/",
+    "meaning": "指示；教导",
+    "example": "The manual instructs users on how to operate the machine."
+  },
+  {
+    "id": 416,
+    "word": "deposit",
+    "phonetic": "/dɪˈpɒzɪt/",
+    "meaning": "存款；押金；沉淀",
+    "example": "You need to pay a deposit to reserve the room."
+  },
+  {
+    "id": 417,
+    "word": "nuclear",
+    "phonetic": "/ˈnjuːkliə/",
+    "meaning": "核能的；核子的",
+    "example": "Nuclear energy provides a significant portion of electricity."
+  },
+  {
+    "id": 418,
+    "word": "depict",
+    "phonetic": "/dɪˈpɪkt/",
+    "meaning": "描绘；描述",
+    "example": "The painting depicts a beautiful landscape."
+  },
+  {
+    "id": 419,
+    "word": "objective",
+    "phonetic": "/əbˈdʒektɪv/",
+    "meaning": "客观的；目标",
+    "example": "The main objective is to increase sales."
+  },
+  {
+    "id": 420,
+    "word": "encourage",
+    "phonetic": "/ɪnˈkʌrɪdʒ/",
+    "meaning": "鼓励；促进",
+    "example": "Teachers should encourage students to ask questions."
+  },
+  {
+    "id": 421,
+    "word": "dominate",
+    "phonetic": "/ˈdɒmɪneɪt/",
+    "meaning": "主导；支配",
+    "example": "The team has dominated the competition for years."
+  },
+  {
+    "id": 422,
+    "word": "diminish",
+    "phonetic": "/dɪˈmɪnɪʃ/",
+    "meaning": "减少；缩小",
+    "example": "The pain will diminish over time."
+  },
+  {
+    "id": 423,
+    "word": "permanent",
+    "phonetic": "/ˈpɜːmənənt/",
+    "meaning": "永久的；固定的",
+    "example": "She found a permanent job after graduation."
+  },
+  {
+    "id": 424,
+    "word": "implement",
+    "phonetic": "/ˈɪmplɪment/",
+    "meaning": "实施；执行",
+    "example": "The government plans to implement new regulations."
+  },
+  {
+    "id": 425,
+    "word": "option",
+    "phonetic": "/ˈɒpʃn/",
+    "meaning": "选择；选项",
+    "example": "We have several options to consider."
+  },
+  {
+    "id": 426,
+    "word": "negotiate",
+    "phonetic": "/nɪˈɡəʊʃieɪt/",
+    "meaning": "谈判；协商",
+    "example": "The union is negotiating a new contract."
+  },
+  {
+    "id": 427,
+    "word": "technique",
+    "phonetic": "/tekˈniːk/",
+    "meaning": "技术；技巧",
+    "example": "She has mastered the technique of negotiation."
+  },
+  {
+    "id": 428,
+    "word": "explore",
+    "phonetic": "/ɪkˈsplɔː/",
+    "meaning": "探索；考察",
+    "example": "We need to explore all possible solutions."
+  },
+  {
+    "id": 429,
+    "word": "conclude",
+    "phonetic": "/kənˈkluːd/",
+    "meaning": "得出结论；结束",
+    "example": "The study concluded that exercise improves mental health."
+  },
+  {
+    "id": 430,
+    "word": "concentrate",
+    "phonetic": "/ˈkɒnsntreɪt/",
+    "meaning": "集中；专注",
+    "example": "I need to concentrate on my studies."
+  },
+  {
+    "id": 431,
+    "word": "status",
+    "phonetic": "/ˈsteɪtəs/",
+    "meaning": "地位；状态",
+    "example": "The current status of the project is on track."
+  },
+  {
+    "id": 432,
+    "word": "summarize",
+    "phonetic": "/ˈsʌməraɪz/",
+    "meaning": "总结；概括",
+    "example": "Can you summarize the main points of the article?"
+  },
+  {
+    "id": 433,
+    "word": "guarantee",
+    "phonetic": "/ˌɡærənˈtiː/",
+    "meaning": "保证；担保",
+    "example": "The product comes with a two-year guarantee."
+  },
+  {
+    "id": 434,
+    "word": "pursue",
+    "phonetic": "/pəˈsjuː/",
+    "meaning": "追求；追赶",
+    "example": "She decided to pursue a career in medicine."
+  },
+  {
+    "id": 435,
+    "word": "perceive",
+    "phonetic": "/pəˈsiːv/",
+    "meaning": "感知；认识到",
+    "example": "How do you perceive the situation?"
+  },
+  {
+    "id": 436,
+    "word": "select",
+    "phonetic": "/sɪˈlekt/",
+    "meaning": "选择；挑选",
+    "example": "Please select your preferred option."
+  },
+  {
+    "id": 437,
+    "word": "component",
+    "phonetic": "/kəmˈpəʊnənt/",
+    "meaning": "组成部分；成分",
+    "example": "Trust is a key component of any relationship."
+  },
+  {
+    "id": 438,
+    "word": "involve",
+    "phonetic": "/ɪnˈvɒlv/",
+    "meaning": "涉及；包含",
+    "example": "The project involves a lot of research."
+  },
+  {
+    "id": 439,
+    "word": "preserve",
+    "phonetic": "/prɪˈzɜːv/",
+    "meaning": "保护；保存",
+    "example": "We must preserve the natural environment."
+  },
+  {
+    "id": 440,
+    "word": "adjust",
+    "phonetic": "/əˈdʒʌst/",
+    "meaning": "调整；适应",
+    "example": "You may need to adjust the settings for better results."
+  },
+  {
+    "id": 441,
+    "word": "appropriate",
+    "phonetic": "/əˈprəʊpriət/",
+    "meaning": "适当的；合适的",
+    "example": "Choose the most appropriate word for each sentence."
+  },
+  {
+    "id": 442,
+    "word": "intense",
+    "phonetic": "/ɪnˈtens/",
+    "meaning": "强烈的；紧张的",
+    "example": "The training program is very intense."
+  },
+  {
+    "id": 443,
+    "word": "particular",
+    "phonetic": "/pəˈtɪkjələ/",
+    "meaning": "特定的；特别的",
+    "example": "Is there a particular reason for your decision?"
+  },
+  {
+    "id": 444,
+    "word": "establish",
+    "phonetic": "/ɪˈstæblɪʃ/",
+    "meaning": "建立；确立",
+    "example": "The company was established in 1990."
+  },
+  {
+    "id": 445,
+    "word": "educate",
+    "phonetic": "/ˈedʒukeɪt/",
+    "meaning": "教育；培养",
+    "example": "The campaign aims to educate the public about health risks."
+  },
+  {
+    "id": 446,
+    "word": "colleague",
+    "phonetic": "/ˈkɒliːɡ/",
+    "meaning": "同事；同行",
+    "example": "I discussed the matter with my colleagues."
+  },
+  {
+    "id": 447,
+    "word": "mutual",
+    "phonetic": "/ˈmjuːtʃuəl/",
+    "meaning": "相互的；共同的",
+    "example": "They have a mutual respect for each other."
+  },
+  {
+    "id": 448,
+    "word": "barrier",
+    "phonetic": "/ˈbæriə/",
+    "meaning": "障碍；屏障",
+    "example": "Language can be a barrier to communication."
+  },
+  {
+    "id": 449,
+    "word": "mental",
+    "phonetic": "/ˈmentl/",
+    "meaning": "心理的；精神的",
+    "example": "Physical exercise also benefits mental health."
+  },
+  {
+    "id": 450,
+    "word": "journal",
+    "phonetic": "/ˈdʒɜːnl/",
+    "meaning": "期刊；日记",
+    "example": "She published her research in a scientific journal."
+  },
+  {
+    "id": 451,
+    "word": "reveal",
+    "phonetic": "/rɪˈviːl/",
+    "meaning": "揭示；透露",
+    "example": "The investigation revealed new evidence."
+  },
+  {
+    "id": 452,
+    "word": "deserve",
+    "phonetic": "/dɪˈzɜːv/",
+    "meaning": "值得；应得",
+    "example": "Good work deserves recognition."
+  },
+  {
+    "id": 453,
+    "word": "surplus",
+    "phonetic": "/ˈsɜːpləs/",
+    "meaning": "过剩；盈余",
+    "example": "The country has a trade surplus."
+  },
+  {
+    "id": 454,
+    "word": "illustrate",
+    "phonetic": "/ˈɪləstreɪt/",
+    "meaning": "说明；阐述",
+    "example": "The diagram illustrates the process step by step."
+  },
+  {
+    "id": 455,
+    "word": "proportion",
+    "phonetic": "/prəˈpɔːʃn/",
+    "meaning": "比例；部分",
+    "example": "A large proportion of the budget goes to education."
+  },
+  {
+    "id": 456,
+    "word": "support",
+    "phonetic": "/səˈpɔːt/",
+    "meaning": "支持；支援",
+    "example": "The research supports our hypothesis."
+  },
+  {
+    "id": 457,
+    "word": "admire",
+    "phonetic": "/ədˈmaɪə/",
+    "meaning": "钦佩；赞赏",
+    "example": "I admire her dedication to her work."
+  },
+  {
+    "id": 458,
+    "word": "portray",
+    "phonetic": "/pɔːˈtreɪ/",
+    "meaning": "描绘；扮演",
+    "example": "The film portrays life in the 19th century."
+  },
+  {
+    "id": 459,
+    "word": "consume",
+    "phonetic": "/kənˈsjuːm/",
+    "meaning": "消费；消耗",
+    "example": "This appliance consumes a lot of electricity."
+  },
+  {
+    "id": 460,
+    "word": "immense",
+    "phonetic": "/ɪˈmens/",
+    "meaning": "巨大的；广大的",
+    "example": "The universe is immense."
+  },
+  {
+    "id": 461,
+    "word": "practical",
+    "phonetic": "/ˈpræktɪkl/",
+    "meaning": "实用的；实际的",
+    "example": "The course provides practical training."
+  },
+  {
+    "id": 462,
+    "word": "overseas",
+    "phonetic": "/ˌəʊvəˈsiːz/",
+    "meaning": "海外的；国外的",
+    "example": "She plans to study overseas next year."
+  },
+  {
+    "id": 463,
+    "word": "link",
+    "phonetic": "/lɪŋk/",
+    "meaning": "联系；连接",
+    "example": "The study found a link between diet and health."
+  },
+  {
+    "id": 464,
+    "word": "expand",
+    "phonetic": "/ɪkˈspænd/",
+    "meaning": "扩大；扩展",
+    "example": "The company plans to expand into new markets."
+  },
+  {
+    "id": 465,
+    "word": "satisfy",
+    "phonetic": "/ˈsætɪsfaɪ/",
+    "meaning": "满足；使满意",
+    "example": "The product does not satisfy our requirements."
+  },
+  {
+    "id": 466,
+    "word": "superior",
+    "phonetic": "/suːˈpɪəriə/",
+    "meaning": "优越的；上级的",
+    "example": "This product is superior to the competition."
+  },
+  {
+    "id": 467,
+    "word": "dynamic",
+    "phonetic": "/daɪˈnæmɪk/",
+    "meaning": "动态的；有活力的",
+    "example": "The job market is constantly dynamic."
+  },
+  {
+    "id": 468,
+    "word": "utilize",
+    "phonetic": "/ˈjuːtəlaɪz/",
+    "meaning": "利用；使用",
+    "example": "We need to utilize our resources efficiently."
+  },
+  {
+    "id": 469,
+    "word": "publish",
+    "phonetic": "/ˈpʌblɪʃ/",
+    "meaning": "出版；发表",
+    "example": "She has published several articles in journals."
+  },
+  {
+    "id": 470,
+    "word": "principal",
+    "phonetic": "/ˈprɪnsəpl/",
+    "meaning": "主要的；校长",
+    "example": "The principal reason for the decision was cost."
+  },
+  {
+    "id": 471,
+    "word": "modify",
+    "phonetic": "/ˈmɒdɪfaɪ/",
+    "meaning": "修改；调整",
+    "example": "We modified the design to improve efficiency."
+  },
+  {
+    "id": 472,
+    "word": "tolerate",
+    "phonetic": "/ˈtɒləreɪt/",
+    "meaning": "容忍；忍受",
+    "example": "We cannot tolerate such behavior."
+  },
+  {
+    "id": 473,
+    "word": "integral",
+    "phonetic": "/ˈɪntɪɡrəl/",
+    "meaning": "必需的；完整的",
+    "example": "Teamwork is an integral part of the job."
+  },
+  {
+    "id": 474,
+    "word": "extend",
+    "phonetic": "/ɪkˈstend/",
+    "meaning": "延长；延伸",
+    "example": "We decided to extend our stay by two days."
+  },
+  {
+    "id": 475,
+    "word": "initiate",
+    "phonetic": "/ɪˈnɪʃieɪt/",
+    "meaning": "开始；发起",
+    "example": "The government initiated a new health program."
+  },
+  {
+    "id": 476,
+    "word": "launch",
+    "phonetic": "/lɔːntʃ/",
+    "meaning": "发射；推出",
+    "example": "The company is launching a new product next month."
+  },
+  {
+    "id": 477,
+    "word": "contact",
+    "phonetic": "/ˈkɒntækt/",
+    "meaning": "联系；接触",
+    "example": "Please contact us if you have any questions."
+  },
+  {
+    "id": 478,
+    "word": "aware",
+    "phonetic": "/əˈweə/",
+    "meaning": "意识到的；知道的",
+    "example": "People are becoming more aware of environmental issues."
+  },
+  {
+    "id": 479,
+    "word": "adapt",
+    "phonetic": "/əˈdæpt/",
+    "meaning": "适应；改编",
+    "example": "Animals must adapt to their environment to survive."
+  },
+  {
+    "id": 480,
+    "word": "frequent",
+    "phonetic": "/ˈfriːkwənt/",
+    "meaning": "频繁的；经常的",
+    "example": "There are frequent flights between the two cities."
+  },
+  {
+    "id": 481,
+    "word": "generous",
+    "phonetic": "/ˈdʒenərəs/",
+    "meaning": "慷慨的；大方的",
+    "example": "She made a generous donation to charity."
+  },
+  {
+    "id": 482,
+    "word": "institute",
+    "phonetic": "/ˈɪnstɪtjuːt/",
+    "meaning": "机构；学院",
+    "example": "She works at a research institute."
+  },
+  {
+    "id": 483,
+    "word": "instrument",
+    "phonetic": "/ˈɪnstrəmənt/",
+    "meaning": "工具；乐器",
+    "example": "The piano is a versatile musical instrument."
+  },
+  {
+    "id": 484,
+    "word": "inhabit",
+    "phonetic": "/ɪnˈhæbɪt/",
+    "meaning": "居住于；栖息",
+    "example": "These birds inhabit tropical forests."
+  },
+  {
+    "id": 485,
+    "word": "adverse",
+    "phonetic": "/ˈædvɜːs/",
+    "meaning": "不利的；有害的",
+    "example": "The drug may cause adverse side effects."
+  },
+  {
+    "id": 486,
+    "word": "expose",
+    "phonetic": "/ɪkˈspəʊz/",
+    "meaning": "暴露；揭露",
+    "example": "The report exposed corruption in the government."
+  },
+  {
+    "id": 487,
+    "word": "device",
+    "phonetic": "/dɪˈvaɪs/",
+    "meaning": "设备；装置",
+    "example": "Electronic devices have become an essential part of life."
+  },
+  {
+    "id": 488,
+    "word": "flexible",
+    "phonetic": "/ˈfleksəbl/",
+    "meaning": "灵活的；柔韧的",
+    "example": "We offer flexible working hours."
+  },
+  {
+    "id": 489,
+    "word": "accomplish",
+    "phonetic": "/əˈkʌmplɪʃ/",
+    "meaning": "完成；实现",
+    "example": "We need to accomplish this task by Friday."
+  },
+  {
+    "id": 490,
+    "word": "defend",
+    "phonetic": "/dɪˈfend/",
+    "meaning": "防御；辩护",
+    "example": "Animals defend their territory from intruders."
+  },
+  {
+    "id": 491,
+    "word": "exhibit",
+    "phonetic": "/ɪɡˈzɪbɪt/",
+    "meaning": "展出；展示",
+    "example": "The artist will exhibit her paintings at the gallery."
+  },
+  {
+    "id": 492,
+    "word": "independent",
+    "phonetic": "/ˌɪndɪˈpendənt/",
+    "meaning": "独立的；自主的",
+    "example": "She is very independent for her age."
+  },
+  {
+    "id": 493,
+    "word": "ignore",
+    "phonetic": "/ɪɡˈnɔː/",
+    "meaning": "忽视；忽略",
+    "example": "We cannot ignore the problem any longer."
+  },
+  {
+    "id": 494,
+    "word": "function",
+    "phonetic": "/ˈfʌŋkʃn/",
+    "meaning": "功能；作用",
+    "example": "The function of the heart is to pump blood."
+  },
+  {
+    "id": 495,
+    "word": "encounter",
+    "phonetic": "/ɪnˈkaʊntə/",
+    "meaning": "遭遇；邂逅",
+    "example": "They encountered many difficulties on their journey."
+  },
+  {
+    "id": 496,
+    "word": "severe",
+    "phonetic": "/sɪˈvɪə/",
+    "meaning": "严重的；严峻的",
+    "example": "The storm caused severe damage."
+  },
+  {
+    "id": 497,
+    "word": "inform",
+    "phonetic": "/ɪnˈfɔːm/",
+    "meaning": "通知；告知",
+    "example": "Please inform us of any changes in your schedule."
+  },
+  {
+    "id": 498,
+    "word": "simultaneous",
+    "phonetic": "/ˌsɪmlˈteɪniəs/",
+    "meaning": "同时的；同步的",
+    "example": "There was a simultaneous translation available."
+  },
+  {
+    "id": 499,
+    "word": "contemporary",
+    "phonetic": "/kənˈtemprəri/",
+    "meaning": "当代的；同时代的",
+    "example": "Contemporary art often challenges traditional views."
+  },
+  {
+    "id": 500,
+    "word": "annual",
+    "phonetic": "/ˈænjuəl/",
+    "meaning": "每年的；年度的",
+    "example": "The company publishes an annual report."
+  }
+]
