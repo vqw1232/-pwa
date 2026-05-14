@@ -151,7 +151,17 @@ function StudyPage({ progress, setProgress }) {
                 <span className="text-sm text-[#8E8E93]">/ {goal}</span>
               </div>
             </div>
-            <button className="text-xs text-[#17C964] font-medium">查看计划</button>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => adjustGoal(-5)}
+                className="w-6 h-6 rounded-full bg-white border border-[#E5E5EA] text-[#8E8E93] text-xs flex items-center justify-center"
+              >−</button>
+              <span className="text-xs text-[#17C964] font-medium">今日目标 {goal}</span>
+              <button
+                onClick={() => adjustGoal(5)}
+                className="w-6 h-6 rounded-full bg-white border border-[#E5E5EA] text-[#8E8E93] text-xs flex items-center justify-center"
+              >+</button>
+            </div>
           </div>
           <div className="h-1 rounded-full bg-[#ECECEC] overflow-hidden">
             <div
@@ -250,10 +260,9 @@ function StudyPage({ progress, setProgress }) {
                 onClick={() => handleKnow(false)}
                 whileTap={{ scale: 0.96 }}
                 transition={{ type: 'spring', stiffness: 500, damping: 35 }}
-                className="h-[84px] rounded-[24px] bg-gradient-to-b from-[#FF5A5F] to-[#FF3B30] shadow-[0_8px_24px_rgba(255,59,48,0.25)] flex flex-col items-center justify-center gap-0.5"
+                className="h-[60px] rounded-[24px] bg-gradient-to-b from-[#FF5A5F] to-[#FF3B30] shadow-[0_8px_24px_rgba(255,59,48,0.25)] flex items-center justify-center"
               >
-                <span className="text-xl font-bold text-white leading-tight">不认识</span>
-                <span className="text-sm text-white/80">不太确定</span>
+                <span className="text-xl font-bold text-white">不认识</span>
               </motion.button>
 
               {/* 认识 */}
@@ -261,10 +270,9 @@ function StudyPage({ progress, setProgress }) {
                 onClick={() => handleKnow(true)}
                 whileTap={{ scale: 0.96 }}
                 transition={{ type: 'spring', stiffness: 500, damping: 35 }}
-                className="h-[84px] rounded-[24px] bg-gradient-to-b from-[#22D06F] to-[#12C764] shadow-[0_8px_24px_rgba(18,199,100,0.25)] flex flex-col items-center justify-center gap-0.5"
+                className="h-[60px] rounded-[24px] bg-gradient-to-b from-[#22D06F] to-[#12C764] shadow-[0_8px_24px_rgba(18,199,100,0.25)] flex items-center justify-center"
               >
-                <span className="text-xl font-bold text-white leading-tight">认识</span>
-                <span className="text-sm text-white/80">已掌握</span>
+                <span className="text-xl font-bold text-white">认识</span>
               </motion.button>
             </div>
           ) : (
