@@ -1,4 +1,5 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useCallback } from 'react'
+import { motion } from 'framer-motion'
 import { getUserId, setUserId } from '../lib/supabase'
 import { loadProgress } from '../lib/progress'
 
@@ -17,13 +18,16 @@ function ProfilePage({ synced, setProgress, setSynced }) {
   }, [idInput, setProgress, setSynced])
 
   return (
-    <div className="flex-1 px-4 pt-8">
-      <div className="max-w-md mx-auto">
-        <h2 className="text-lg font-semibold text-gray-700 mb-6">我的</h2>
+    <main className="flex-1 px-5 pt-6 pb-32 flex flex-col">
+      <header className="flex items-center justify-between pt-1 mb-6">
+        <h1 className="text-4xl font-bold tracking-tight text-[#111]">我的</h1>
+      </header>
 
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-4 mb-4">
-          <h3 className="text-sm font-semibold text-gray-700 mb-2">跨设备同步</h3>
-          <p className="text-xs text-gray-400 mb-3">
+      <div className="space-y-4">
+        {/* Sync Card */}
+        <div className="bg-white rounded-[28px] p-6 shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
+          <h2 className="text-lg font-bold text-[#111] mb-2">跨设备同步</h2>
+          <p className="text-sm text-[#8E8E93] mb-4 leading-relaxed">
             在另一台设备上输入相同的用户 ID 即可同步学习进度。
           </p>
           <div className="flex gap-2">
@@ -31,27 +35,50 @@ function ProfilePage({ synced, setProgress, setSynced }) {
               type="text"
               value={idInput}
               onChange={e => setIdInput(e.target.value)}
-              className="flex-1 px-3 py-2 text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-300"
+              className="flex-1 px-4 py-3 text-sm bg-[#F7F7F8] rounded-[16px] text-[#111] placeholder-[#9E9EA7] focus:outline-none focus:ring-2 focus:ring-[#17C964]/30 transition-all"
               placeholder="输入你的用户 ID"
             />
-            <button
+            <motion.button
               onClick={handleSetId}
-              className="px-4 py-2 text-sm font-medium text-white bg-indigo-500 rounded-xl hover:bg-indigo-600"
+              whileTap={{ scale: 0.96 }}
+              className="px-6 py-3 text-sm font-medium text-white bg-[#111] rounded-[16px]"
             >
               应用
-            </button>
+            </motion.button>
           </div>
-          <p className="text-xs text-gray-400 mt-2">当前 ID: {userId}</p>
+          <div className="flex items-center gap-2 mt-4 pt-4 border-t border-[#EFEFEF]">
+            <span className="text-xs text-[#8E8E93]">当前 ID:</span>
+            <span className="text-xs font-mono text-[#111]">{userId}</span>
+          </div>
         </div>
 
-        <div className="flex items-center gap-2 text-sm text-gray-400">
-          <span>同步状态:</span>
-          {synced === true && <span className="text-emerald-500">已同步</span>}
-          {synced === false && <span className="text-amber-500">离线</span>}
-          {synced === null && <span className="text-gray-400">加载中...</span>}
+        {/* Sync Status Card */}
+        <div className="bg-white rounded-[28px] p-6 shadow-[0_8px_30px_rgba(0,0,0,0.04)] flex items-center justify-between">
+          <span className="text-sm text-[#8E8E93]">同步状态</span>
+          <div className="flex items-center gap-2">
+            {synced === true && (
+              <>
+                <div className="w-2 h-2 rounded-full bg-[#17C964]" />
+                <span className="text-sm font-medium text-[#17C964]">已同步</span>
+              </>
+            )}
+            {synced === false && (
+              <>
+                <div className="w-2 h-2 rounded-full bg-[#FF9500]" />
+                <span className="text-sm font-medium text-[#FF9500]">离线</span>
+              </>
+            )}
+            {synced === null && (
+              <>
+                <div className="w-2 h-2 rounded-full bg-[#8E8E93] animate-pulse" />
+                <span className="text-sm font-medium text-[#8E8E93]">加载中...</span>
+              </>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </main>
   )
 }
+
 export default ProfilePage

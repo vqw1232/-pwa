@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import words from '../data/ielts_words.json'
 
 function shuffle(arr) {
@@ -23,6 +24,17 @@ function markReviewed(wordId) {
   localStorage.setItem('reviewedTimestamps', JSON.stringify(map))
 }
 
+const cardVariants = {
+  enter: { opacity: 0, x: 60 },
+  center: { opacity: 1, x: 0 },
+  exit: { opacity: 0, scale: 0.96 },
+}
+
+const revealVariants = {
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0 },
+}
+
 function ReviewPage({ progress }) {
   const [reviewWords, setReviewWords] = useState([])
   const [eligibleCount, setEligibleCount] = useState(0)
@@ -33,7 +45,6 @@ function ReviewPage({ progress }) {
     try { return parseInt(localStorage.getItem('reviewCount')) || 20 } catch { return 20 }
   })
 
-  // Build review list: wrong words first, then spaced by 1-7 day window
   useEffect(() => {
     const studiedIds = Object.keys(progress)
     if (studiedIds.length === 0) {
@@ -45,24 +56,18 @@ function ReviewPage({ progress }) {
     const now = Date.now()
     const oneDay = 24 * 60 * 60 * 1000
 
-    // Score each word
     const scored = []
     for (const id of studiedIds) {
       const p = progress[id]
       const lastTime = reviewed[id] || 0
       const daysSince = (now - lastTime) / oneDay
-
-      // Skip words reviewed within the last 24 hours
       if (daysSince < 1 && lastTime > 0) continue
-
-      // Priority: wrong words (highest), then days-since-last-review
       const priority = (p.wrong > 0 ? 1000 : 0) + daysSince
       scored.push({ id: parseInt(id), priority, daysSince, wrong: p.wrong })
     }
 
     scored.sort((a, b) => b.priority - a.priority)
 
-    // Randomize within tiers, then cap at `count`
     const selected = []
     const wrong = scored.filter(s => s.wrong > 0)
     const overdue = scored.filter(s => s.wrong === 0 && s.daysSince > 7)
@@ -102,7 +107,7 @@ function ReviewPage({ progress }) {
       setIndex(i => i + 1)
       setRevealed(false)
     } else {
-      setIndex(reviewWords.length) // triggers done state
+      setIndex(reviewWords.length)
     }
   }, [index, reviewWords.length])
 
@@ -114,144 +119,208 @@ function ReviewPage({ progress }) {
     })
   }
 
-  // Setup screen
+  const exampleParts = current?.example
+    ? current.example.split(new RegExp(`\\b(${current.word})\\b`, 'gi'))
+    : []
+
+  // ---- Setup screen ----
   if (!started) {
     return (
-      <div className="flex-1 flex flex-col items-center justify-center px-6">
-        <div className="text-center max-w-md">
-          <h2 className="text-xl font-bold text-gray-700 mb-2">复习模式</h2>
-          <p className="text-sm text-gray-400 mb-2">优先复习你之前答错的单词</p>
-          <p className="text-xs text-gray-400 mb-6">
-            待复习: {eligibleCount} 个 · 本次: {reviewWords.length} 个
-          </p>
-
-          <div className="flex items-center justify-center gap-3 mb-8">
-            <button
-              onClick={() => adjustCount(-5)}
-              className="w-8 h-8 rounded-full bg-gray-200 text-gray-600 text-sm hover:bg-gray-300"
-            >−</button>
-            <div className="flex items-center gap-1">
-              <input
-                type="number"
-                value={count}
-                onChange={e => {
-                  const v = Math.max(1, Math.min(500, parseInt(e.target.value) || 1))
-                  setCount(v)
-                  localStorage.setItem('reviewCount', String(v))
-                }}
-                className="w-16 text-center text-lg font-medium border border-gray-300 rounded-lg py-1 [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
-                min="1" max="500"
-              />
-              <span className="text-gray-400 text-sm">个</span>
+      <main className="flex-1 px-5 pt-6 pb-24 flex flex-col">
+        <header className="mb-4">
+          <h1 className="text-4xl font-bold tracking-tight text-[#111]">复习</h1>
+        </header>
+        <div className="flex-1 flex flex-col items-center justify-center -mt-12">
+          <div className="text-center max-w-md">
+            <div className="w-20 h-20 rounded-full bg-[#FF9500]/10 flex items-center justify-center mx-auto mb-6">
+              <span className="text-4xl text-[#FF9500]">↻</span>
             </div>
-            <button
-              onClick={() => adjustCount(5)}
-              className="w-8 h-8 rounded-full bg-gray-200 text-gray-600 text-sm hover:bg-gray-300"
-            >+</button>
-          </div>
+            <h2 className="text-2xl font-bold text-[#111] mb-2">复习模式</h2>
+            <p className="text-[#8E8E93] mb-1">优先复习你之前答错的单词</p>
+            <p className="text-sm text-[#8E8E93] mb-8">
+              待复习: {eligibleCount} 个 · 本次: {reviewWords.length} 个
+            </p>
 
-          {reviewWords.length > 0 ? (
-            <button
-              onClick={() => setStarted(true)}
-              className="w-48 h-14 rounded-2xl text-lg font-bold text-white bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 transition-colors shadow-lg shadow-indigo-500/25 active:scale-[0.98]"
-            >开始复习</button>
-          ) : (
-            <p className="text-gray-400">暂无需要复习的单词，先去学习吧！</p>
-          )}
-        </div>
-      </div>
-    )
-  }
+            <div className="flex items-center justify-center gap-3 mb-8">
+              <button
+                onClick={() => adjustCount(-5)}
+                className="w-9 h-9 rounded-full bg-white shadow-soft text-[#8E8E93] text-lg flex items-center justify-center"
+              >−</button>
+              <div className="flex items-center gap-1">
+                <span className="text-3xl font-bold text-[#111]">{count}</span>
+                <span className="text-[#8E8E93] text-sm">个</span>
+              </div>
+              <button
+                onClick={() => adjustCount(5)}
+                className="w-9 h-9 rounded-full bg-white shadow-soft text-[#8E8E93] text-lg flex items-center justify-center"
+              >+</button>
+            </div>
 
-  // Done screen
-  if (isDone) {
-    return (
-      <div className="flex-1 flex flex-col items-center justify-center px-6">
-        <div className="text-center">
-          <p className="text-5xl mb-4">✓</p>
-          <h2 className="text-xl font-bold text-gray-700 mb-2">复习完成！</h2>
-          <p className="text-sm text-gray-400 mb-6">共复习了 {reviewWords.length} 个单词</p>
-          <button
-            onClick={() => {
-              setStarted(false)
-              setIndex(0)
-              setRevealed(false)
-            }}
-            className="px-8 h-12 rounded-2xl text-base font-bold text-white bg-indigo-500 hover:bg-indigo-600 transition-colors"
-          >再来一组</button>
-        </div>
-      </div>
-    )
-  }
-
-  // Active review
-  return (
-    <div className="flex-1 flex flex-col">
-      {/* Top bar */}
-      <div className="shrink-0 px-4 pt-4 pb-2">
-        <div className="max-w-md mx-auto">
-          <div className="flex justify-between items-center mb-2">
-            <span className="text-sm text-gray-400 font-mono">
-              复习 {index + 1} / {reviewWords.length}
-            </span>
-            <span className="text-xs text-amber-500">
-              {wrongCount > 0 ? `曾答错 ${wrongCount} 次` : ''}
-            </span>
-          </div>
-          <div className="w-full bg-gray-200 rounded-full h-1.5">
-            <div
-              className="bg-amber-500 h-1.5 rounded-full transition-all duration-300"
-              style={{ width: `${((index + 1) / reviewWords.length) * 100}%` }}
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Word card */}
-      <main className="flex-1 flex items-center justify-center px-6">
-        <div className="w-full max-w-md text-center">
-          <h1 className="text-4xl font-bold text-gray-900 tracking-tight mb-2 select-none">
-            {current.word}
-          </h1>
-          <p className="text-lg text-gray-400 mb-6 select-none">
-            {current.phonetic}
-          </p>
-
-          <div className={`transition-all duration-500 ease-out overflow-hidden ${
-            revealed ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'
-          }`}>
-            <p className="text-xl text-gray-700 mb-4 leading-relaxed">{current.meaning}</p>
-            <p className="text-sm text-gray-400 italic leading-relaxed bg-gray-100 rounded-xl px-4 py-3">{current.example}{current.exampleCn ? `（${current.exampleCn}）` : ''}</p>
-            {correctCount > 0 && (
-              <p className="text-xs text-emerald-500 mt-3">已掌握 {correctCount} 次</p>
+            {reviewWords.length > 0 ? (
+              <motion.button
+                onClick={() => setStarted(true)}
+                whileTap={{ scale: 0.96 }}
+                className="w-48 h-14 rounded-[24px] text-lg font-bold text-white bg-gradient-to-b from-[#FF9500] to-[#E68A00] shadow-[0_8px_24px_rgba(255,149,0,0.25)]"
+              >开始复习</motion.button>
+            ) : (
+              <p className="text-[#8E8E93]">暂无需要复习的单词，先去学习吧！</p>
             )}
           </div>
         </div>
       </main>
+    )
+  }
 
-      {/* Buttons */}
-      <footer className="shrink-0 px-4 pb-8 pt-2">
-        <div className="max-w-md mx-auto">
-          {!revealed ? (
-            <div className="flex gap-3">
-              <button
-                onClick={() => handleKnow(false)}
-                className="flex-1 h-16 rounded-2xl text-lg font-bold text-white bg-red-500 active:bg-red-600 transition-colors shadow-lg shadow-red-500/25 active:scale-[0.98]"
-              >不认识</button>
-              <button
-                onClick={() => handleKnow(true)}
-                className="flex-1 h-16 rounded-2xl text-lg font-bold text-white bg-emerald-500 active:bg-emerald-600 transition-colors shadow-lg shadow-emerald-500/25 active:scale-[0.98]"
-              >认识</button>
+  // ---- Done screen ----
+  if (isDone) {
+    return (
+      <main className="flex-1 px-5 pt-6 pb-24 flex flex-col">
+        <header className="mb-4">
+          <h1 className="text-4xl font-bold tracking-tight text-[#111]">复习</h1>
+        </header>
+        <div className="flex-1 flex flex-col items-center justify-center -mt-12">
+          <div className="text-center">
+            <div className="w-20 h-20 rounded-full bg-[#17C964]/10 flex items-center justify-center mx-auto mb-6">
+              <span className="text-4xl text-[#17C964]">✓</span>
             </div>
-          ) : (
-            <button
-              onClick={handleNext}
-              className="w-full h-16 rounded-2xl text-lg font-bold text-white bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 transition-colors shadow-lg shadow-indigo-500/25 active:scale-[0.98]"
-            >{index < reviewWords.length - 1 ? '下一个' : '完成'}</button>
+            <h2 className="text-2xl font-bold text-[#111] mb-2">复习完成！</h2>
+            <p className="text-[#8E8E93] mb-8">共复习了 {reviewWords.length} 个单词</p>
+            <motion.button
+              onClick={() => {
+                setStarted(false)
+                setIndex(0)
+                setRevealed(false)
+              }}
+              whileTap={{ scale: 0.96 }}
+              className="px-8 h-14 rounded-[24px] text-base font-bold text-white bg-[#111] shadow-lg"
+            >再来一组</motion.button>
+          </div>
+        </div>
+      </main>
+    )
+  }
+
+  // ---- Active review ----
+  return (
+    <main className="flex-1 px-5 pt-6 pb-24 flex flex-col gap-3">
+      <header className="pt-1 mb-1">
+        <h1 className="text-4xl font-bold tracking-tight text-[#111]">复习</h1>
+      </header>
+
+      {/* Progress bar */}
+      <div className="bg-white rounded-[24px] px-5 py-4 shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
+        <div className="flex items-center justify-between mb-3">
+          <span className="text-xs text-[#8E8E93]">复习进度 {index + 1}/{reviewWords.length}</span>
+          {wrongCount > 0 && (
+            <span className="text-xs text-[#FF453A] font-medium">曾答错 {wrongCount} 次</span>
           )}
         </div>
-      </footer>
-    </div>
+        <div className="h-1 rounded-full bg-[#ECECEC] overflow-hidden">
+          <div
+            className="h-full rounded-full bg-[#FF9500] transition-all duration-500 ease-out"
+            style={{ width: `${((index + 1) / reviewWords.length) * 100}%` }}
+          />
+        </div>
+      </div>
+
+      {/* Word Card + Buttons */}
+      <div className="flex-1 flex flex-col gap-3 min-h-0">
+        {/* Word Card */}
+        <div className="flex-1 bg-white rounded-[32px] px-6 py-8 shadow-[0_12px_40px_rgba(0,0,0,0.05)] flex flex-col items-center justify-center min-h-0">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={current.id}
+              variants={cardVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
+              className="w-full flex flex-col items-center"
+            >
+              <h2 className="text-[56px] font-bold leading-none tracking-[-0.04em] text-[#111] select-none text-center break-words max-w-full">
+                {current.word}
+              </h2>
+
+              {current.phonetic && (
+                <p className="text-lg text-[#8E8E93] mt-3 select-none">
+                  {current.phonetic}
+                </p>
+              )}
+
+              <AnimatePresence>
+                {revealed && (
+                  <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    variants={revealVariants}
+                    transition={{ duration: 0.24, ease: 'easeOut' }}
+                    className="w-full"
+                  >
+                    <div className="h-px bg-[#EFEFEF] my-6" />
+                    <p className="text-lg font-medium leading-relaxed text-[#111] text-center">
+                      {current.meaning}
+                    </p>
+                    {current.example && (
+                      <p className="text-base text-[#8E8E93] leading-relaxed mt-3 text-center">
+                        {exampleParts.length > 1 ? (
+                          exampleParts.map((part, i) => {
+                            const isHighlighted = part.toLowerCase() === current.word.toLowerCase()
+                            return isHighlighted
+                              ? <span key={i} className="text-[#18C964] font-semibold">{part}</span>
+                              : <span key={i}>{part}</span>
+                          })
+                        ) : (
+                          current.example
+                        )}
+                      </p>
+                    )}
+                    {correctCount > 0 && (
+                      <p className="text-xs text-[#17C964] text-center mt-3 font-medium">
+                        已掌握 {correctCount} 次
+                      </p>
+                    )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Buttons */}
+        {!revealed ? (
+          <div className="grid grid-cols-2 gap-3">
+            <motion.button
+              onClick={() => handleKnow(false)}
+              whileTap={{ scale: 0.96 }}
+              className="h-[104px] rounded-[24px] bg-gradient-to-b from-[#FF5A5F] to-[#FF3B30] shadow-[0_8px_24px_rgba(255,59,48,0.25)] flex flex-col items-center justify-center gap-0.5"
+            >
+              <span className="text-2xl font-bold text-white leading-tight">不认识</span>
+              <span className="text-sm text-white/80">再记一次</span>
+            </motion.button>
+            <motion.button
+              onClick={() => handleKnow(true)}
+              whileTap={{ scale: 0.96 }}
+              className="h-[104px] rounded-[24px] bg-gradient-to-b from-[#22D06F] to-[#12C764] shadow-[0_8px_24px_rgba(18,199,100,0.25)] flex flex-col items-center justify-center gap-0.5"
+            >
+              <span className="text-2xl font-bold text-white leading-tight">认识</span>
+              <span className="text-sm text-white/80">记得了</span>
+            </motion.button>
+          </div>
+        ) : (
+          <motion.button
+            onClick={handleNext}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2 }}
+            whileTap={{ scale: 0.96 }}
+            className="w-full h-[56px] rounded-[24px] bg-[#111] text-white text-lg font-bold shadow-lg"
+          >
+            {index < reviewWords.length - 1 ? '继续' : '完成'}
+          </motion.button>
+        )}
+      </div>
+    </main>
   )
 }
+
 export default ReviewPage

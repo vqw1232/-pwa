@@ -1,4 +1,5 @@
 import { useState, useCallback, useMemo, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import words from '../data/ielts_words.json'
 import { saveProgress } from '../lib/progress'
 
@@ -26,8 +27,18 @@ function addStudiedToday(wordId) {
   localStorage.setItem('studiedDaily', JSON.stringify(data))
 }
 
+const cardVariants = {
+  enter: { opacity: 0, x: 60 },
+  center: { opacity: 1, x: 0 },
+  exit: { opacity: 0, scale: 0.96 },
+}
+
+const revealVariants = {
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0 },
+}
+
 function StudyPage({ progress, setProgress }) {
-  // sessionStudied tracks words excluded from study (across sessions + this session)
   const [sessionStudied, setSessionStudied] = useState(() => {
     const ids = Object.keys(progress)
     return ids.length > 0 ? new Set(ids.map(Number)) : new Set()
@@ -35,10 +46,10 @@ function StudyPage({ progress, setProgress }) {
   const [progressLoaded, setProgressLoaded] = useState(Object.keys(progress).length > 0)
   const [index, setIndex] = useState(0)
   const [revealed, setRevealed] = useState(false)
+  const [direction, setDirection] = useState(1)
   const [goal, setGoalState] = useState(getDailyGoal)
   const [studiedIds, setStudiedIds] = useState(getStudiedToday)
 
-  // Once server progress arrives, seed sessionStudied with already-studied words
   useEffect(() => {
     if (!progressLoaded && Object.keys(progress).length > 0) {
       setSessionStudied(new Set(Object.keys(progress).map(Number)))
@@ -46,7 +57,6 @@ function StudyPage({ progress, setProgress }) {
     }
   }, [progress, progressLoaded])
 
-  // Filter only by sessionStudied — NOT by progress, so setProgress won't shift the list
   const unstudiedWords = useMemo(() =>
     words.filter(w => !sessionStudied.has(w.id)),
     [sessionStudied]
@@ -58,7 +68,6 @@ function StudyPage({ progress, setProgress }) {
   const studiedCount = studiedIds.length
   const dailyProgress = Math.min(studiedCount / goal * 100, 100)
 
-  // Safety: keep index in bounds if list unexpectedly shrinks
   useEffect(() => {
     if (index >= unstudiedWords.length && unstudiedWords.length > 0) {
       setIndex(unstudiedWords.length - 1)
@@ -81,12 +90,10 @@ function StudyPage({ progress, setProgress }) {
     setStudiedIds(getStudiedToday())
   }, [current, setProgress])
 
-  // When user taps "下一个", mark current word as studied this session.
-  // The word slides out of unstudiedWords and the next word takes its place
-  // (index stays the same).
   const handleNext = useCallback(() => {
     setSessionStudied(prev => new Set([...prev, current.id]))
     setRevealed(false)
+    setDirection(1)
   }, [current])
 
   const adjustGoal = (delta) => {
@@ -97,110 +104,186 @@ function StudyPage({ progress, setProgress }) {
     })
   }
 
-  // All done
+  // ---- All done ----
   if (unstudiedWords.length === 0) {
     return (
-      <div className="flex-1 flex flex-col items-center justify-center px-6">
-        <div className="text-center max-w-md">
-          <p className="text-5xl mb-4 font-light text-indigo-300">✓</p>
-          <h2 className="text-xl font-bold text-gray-700 mb-2">全部学完！</h2>
-          <p className="text-sm text-gray-400">
-            所有单词已掌握，去复习巩固吧
-          </p>
+      <main className="flex-1 px-5 pt-6 pb-24 flex flex-col">
+        <header className="mb-4">
+          <h1 className="text-4xl font-bold tracking-tight text-[#111]">学习</h1>
+        </header>
+        <div className="flex-1 flex flex-col items-center justify-center -mt-12">
+          <div className="text-center max-w-md">
+            <div className="w-20 h-20 rounded-full bg-[#17C964]/10 flex items-center justify-center mx-auto mb-6">
+              <span className="text-4xl text-[#17C964]">✓</span>
+            </div>
+            <h2 className="text-2xl font-bold text-[#111] mb-2">全部学完！</h2>
+            <p className="text-[#8E8E93]">所有单词已掌握，去复习巩固吧</p>
+          </div>
         </div>
-      </div>
+      </main>
     )
   }
 
   if (!current) return null
 
+  // ---- Highlight word in example ----
+  const exampleParts = current.example
+    ? current.example.split(new RegExp(`\\b(${current.word})\\b`, 'gi'))
+    : []
+
+  const exampleCn = current.exampleCn || ''
+
   return (
-    <div className="flex-1 flex flex-col">
-      {/* Top bar with daily goal */}
-      <div className="shrink-0 px-4 pt-4 pb-2">
-        <div className="max-w-md mx-auto">
-          <div className="flex justify-between items-center mb-2">
-            <span className="text-sm text-gray-400 font-mono">
-              剩余 {unstudiedWords.length} 词
-            </span>
-            <div className="flex items-center gap-1.5">
-              <span className="text-xs text-gray-400">今日目标</span>
-              <button
-                onClick={() => adjustGoal(-10)}
-                className="w-6 h-6 rounded-full bg-gray-200 text-gray-600 text-xs flex items-center justify-center hover:bg-gray-300"
-              >−</button>
-              <input
-                type="number"
-                value={goal}
-                onChange={e => {
-                  const v = Math.max(1, Math.min(500, parseInt(e.target.value) || 1))
-                  setGoalState(v)
-                  localStorage.setItem('dailyGoal', String(v))
-                }}
-                className="w-14 text-center text-sm border border-gray-300 rounded-lg py-0.5 [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
-                min="1" max="500"
-              />
-              <button
-                onClick={() => adjustGoal(10)}
-                className="w-6 h-6 rounded-full bg-gray-200 text-gray-600 text-xs flex items-center justify-center hover:bg-gray-300"
-              >+</button>
+    <>
+      <main className="flex-1 px-5 pt-6 pb-24 flex flex-col gap-3">
+        {/* ============ HEADER ============ */}
+        <header className="pt-1 mb-1">
+          <h1 className="text-4xl font-bold tracking-tight text-[#111]">学习</h1>
+        </header>
+
+        {/* ============ PROGRESS CARD ============ */}
+        <div className="bg-white rounded-[24px] px-5 py-4 shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
+          <div className="flex items-center justify-between mb-3">
+            <div>
+              <p className="text-xs text-[#8E8E93] mb-0.5">今日学习进度</p>
+              <div className="flex items-baseline gap-1">
+                <span className="text-3xl font-bold text-[#111]">{studiedCount}</span>
+                <span className="text-sm text-[#8E8E93]">/ {goal}</span>
+              </div>
             </div>
+            <button className="text-xs text-[#17C964] font-medium">查看计划</button>
           </div>
-          <div className="w-full bg-gray-200 rounded-full h-1.5">
+          <div className="h-1 rounded-full bg-[#ECECEC] overflow-hidden">
             <div
-              className="bg-indigo-500 h-1.5 rounded-full transition-all duration-300"
+              className="h-full rounded-full bg-[#16C05E] transition-all duration-500 ease-out"
               style={{ width: `${dailyProgress}%` }}
             />
           </div>
-          <p className="text-xs text-gray-400 mt-1 text-right">今日已学 {studiedCount}/{goal} 词</p>
         </div>
-      </div>
 
-      {/* Word card */}
-      <main className="flex-1 flex items-center justify-center px-6">
-        <div className="w-full max-w-md text-center">
-          <h1 className="text-4xl font-bold text-gray-900 tracking-tight mb-2 select-none">
-            {current.word}
-          </h1>
-          <p className="text-lg text-gray-400 mb-6 select-none">
-            {current.phonetic}
-          </p>
+        {/* ============ WORD CARD + BUTTONS ============ */}
+        <div className="flex-1 flex flex-col gap-3 min-h-0">
+          {/* Word Card */}
+          <div className="flex-1 bg-white rounded-[32px] px-6 py-8 shadow-[0_12px_40px_rgba(0,0,0,0.05)] flex flex-col items-center justify-center min-h-0">
+            <AnimatePresence mode="wait" custom={direction}>
+              <motion.div
+                key={current.id}
+                custom={direction}
+                variants={cardVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
+                className="w-full flex flex-col items-center justify-center"
+              >
+                {/* Word */}
+                <h2 className="text-[56px] font-bold leading-none tracking-[-0.04em] text-[#111] select-none text-center break-words max-w-full">
+                  {current.word}
+                </h2>
 
-          <div className={`transition-all duration-500 ease-out overflow-hidden ${
-            revealed ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'
-          }`}>
-            <p className="text-xl text-gray-700 mb-4 leading-relaxed">{current.meaning}</p>
-            <p className="text-sm text-gray-400 italic leading-relaxed bg-gray-100 rounded-xl px-4 py-3">{current.example}{current.exampleCn ? `（${current.exampleCn}）` : ''}</p>
-            {correctCount > 0 && (
-              <p className="text-xs text-emerald-500 mt-3">已掌握 {correctCount} 次</p>
-            )}
+                {/* Phonetic */}
+                {current.phonetic && (
+                  <p className="text-lg text-[#8E8E93] mt-3 select-none">
+                    {current.phonetic}
+                  </p>
+                )}
+
+                {/* Revealed content */}
+                <AnimatePresence>
+                  {revealed && (
+                    <motion.div
+                      initial="hidden"
+                      animate="visible"
+                      variants={revealVariants}
+                      transition={{ duration: 0.24, ease: 'easeOut' }}
+                      className="w-full"
+                    >
+                      {/* Divider */}
+                      <div className="h-px bg-[#EFEFEF] my-6" />
+
+                      {/* Meaning */}
+                      <p className="text-lg font-medium leading-relaxed text-[#111] text-center">
+                        {current.meaning}
+                      </p>
+
+                      {/* Example */}
+                      {current.example && (
+                        <p className="text-base text-[#8E8E93] leading-relaxed mt-3 text-center">
+                          {exampleParts.length > 1 ? (
+                            exampleParts.map((part, i) => {
+                              const isHighlighted = part.toLowerCase() === current.word.toLowerCase()
+                              return isHighlighted
+                                ? <span key={i} className="text-[#18C964] font-semibold">{part}</span>
+                                : <span key={i}>{part}</span>
+                            })
+                          ) : (
+                            current.example
+                          )}
+                        </p>
+                      )}
+
+                      {/* Chinese example */}
+                      {exampleCn && (
+                        <p className="text-sm text-[#8E8E93] leading-relaxed mt-1.5 text-center">
+                          {exampleCn}
+                        </p>
+                      )}
+
+                      {/* Mastery count */}
+                      {correctCount > 0 && (
+                        <p className="text-xs text-[#17C964] text-center mt-3 font-medium">
+                          已掌握 {correctCount} 次
+                        </p>
+                      )}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            </AnimatePresence>
           </div>
-        </div>
-      </main>
 
-      {/* Buttons */}
-      <footer className="shrink-0 px-4 pb-8 pt-2">
-        <div className="max-w-md mx-auto">
+          {/* ============ ACTION BUTTONS ============ */}
           {!revealed ? (
-            <div className="flex gap-3">
-              <button
+            <div className="grid grid-cols-2 gap-3">
+              {/* 不认识 */}
+              <motion.button
                 onClick={() => handleKnow(false)}
-                className="flex-1 h-16 rounded-2xl text-lg font-bold text-white bg-red-500 active:bg-red-600 transition-colors shadow-lg shadow-red-500/25 active:scale-[0.98]"
-              >不认识</button>
-              <button
+                whileTap={{ scale: 0.96 }}
+                transition={{ type: 'spring', stiffness: 500, damping: 35 }}
+                className="h-[104px] rounded-[24px] bg-gradient-to-b from-[#FF5A5F] to-[#FF3B30] shadow-[0_8px_24px_rgba(255,59,48,0.25)] flex flex-col items-center justify-center gap-0.5"
+              >
+                <span className="text-2xl font-bold text-white leading-tight">不认识</span>
+                <span className="text-sm text-white/80">不太确定</span>
+              </motion.button>
+
+              {/* 认识 */}
+              <motion.button
                 onClick={() => handleKnow(true)}
-                className="flex-1 h-16 rounded-2xl text-lg font-bold text-white bg-emerald-500 active:bg-emerald-600 transition-colors shadow-lg shadow-emerald-500/25 active:scale-[0.98]"
-              >认识</button>
+                whileTap={{ scale: 0.96 }}
+                transition={{ type: 'spring', stiffness: 500, damping: 35 }}
+                className="h-[104px] rounded-[24px] bg-gradient-to-b from-[#22D06F] to-[#12C764] shadow-[0_8px_24px_rgba(18,199,100,0.25)] flex flex-col items-center justify-center gap-0.5"
+              >
+                <span className="text-2xl font-bold text-white leading-tight">认识</span>
+                <span className="text-sm text-white/80">已掌握</span>
+              </motion.button>
             </div>
           ) : (
-            <button
+            /* ============ NEXT BUTTON ============ */
+            <motion.button
               onClick={handleNext}
-              className="w-full h-16 rounded-2xl text-lg font-bold text-white bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 transition-colors shadow-lg shadow-indigo-500/25 active:scale-[0.98]"
-            >下一个</button>
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.2 }}
+              whileTap={{ scale: 0.96 }}
+              className="w-full h-[56px] rounded-[24px] bg-[#111] text-white text-lg font-bold shadow-lg"
+            >
+              继续
+            </motion.button>
           )}
         </div>
-      </footer>
-    </div>
+      </main>
+    </>
   )
 }
+
 export default StudyPage

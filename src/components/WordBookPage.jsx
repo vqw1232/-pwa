@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import words from '../data/ielts_words.json'
 
 function WordBookPage() {
@@ -15,63 +16,87 @@ function WordBookPage() {
   }, [query])
 
   return (
-    <div className="flex-1 flex flex-col">
+    <main className="flex-1 px-5 pt-6 pb-32 flex flex-col">
+      <header className="flex items-center justify-between pt-1 mb-6">
+        <h1 className="text-4xl font-bold tracking-tight text-[#111]">单词本</h1>
+      </header>
+
       {/* Search bar */}
-      <div className="shrink-0 px-4 pt-4 pb-2">
-        <div className="max-w-md mx-auto">
-          <input
-            type="text"
-            value={query}
-            onChange={e => { setQuery(e.target.value); setExpandedId(null) }}
-            placeholder="搜索单词或中文释义..."
-            className="w-full px-4 py-3 text-sm border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-300"
-            autoFocus
-          />
-          {query.trim() && (
-            <p className="text-xs text-gray-400 mt-1">
-              找到 {results.length}{results.length >= 100 ? '+' : ''} 个结果
-            </p>
-          )}
-        </div>
+      <div className="mb-4">
+        <input
+          type="text"
+          value={query}
+          onChange={e => { setQuery(e.target.value); setExpandedId(null) }}
+          placeholder="搜索单词或中文释义..."
+          className="w-full px-5 py-4 text-base bg-white rounded-[28px] shadow-[0_8px_30px_rgba(0,0,0,0.04)] text-[#111] placeholder-[#9E9EA7] focus:outline-none focus:ring-2 focus:ring-[#17C964]/30 transition-all"
+          autoFocus
+        />
+        {query.trim() && (
+          <p className="text-xs text-[#8E8E93] mt-2 ml-2">
+            找到 {results.length}{results.length >= 100 ? '+' : ''} 个结果
+          </p>
+        )}
       </div>
 
       {/* Results */}
-      <div className="flex-1 overflow-y-auto px-4 pb-4">
-        <div className="max-w-md mx-auto space-y-1">
-          {results.map(w => (
-            <div key={w.id}>
-              <button
-                onClick={() => setExpandedId(expandedId === w.id ? null : w.id)}
-                className={`w-full text-left px-4 py-3 rounded-xl transition-colors ${
-                  expandedId === w.id ? 'bg-indigo-50' : 'hover:bg-gray-50'
-                }`}
+      <div className="flex-1 overflow-y-auto">
+        <div className="space-y-2">
+          <AnimatePresence>
+            {results.map((w, i) => (
+              <motion.div
+                key={w.id}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.02, duration: 0.2 }}
               >
-                <div className="flex items-baseline justify-between gap-2">
-                  <span className="font-medium text-gray-900">{w.word}</span>
-                  <span className="text-sm text-gray-400 truncate">{w.meaning}</span>
-                </div>
-                {expandedId === w.id && (
-                  <div className="mt-2 pt-2 border-t border-gray-200 space-y-1">
-                    {w.phonetic && (
-                      <p className="text-sm text-gray-400">{w.phonetic}</p>
-                    )}
-                    {w.example && (
-                      <p className="text-sm text-gray-500 italic leading-relaxed">{w.example}</p>
-                    )}
+                <button
+                  onClick={() => setExpandedId(expandedId === w.id ? null : w.id)}
+                  className="w-full text-left bg-white rounded-[20px] p-5 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-shadow"
+                >
+                  <div className="flex items-baseline justify-between gap-3">
+                    <span className="text-lg font-bold text-[#111]">{w.word}</span>
+                    <span className="text-sm text-[#8E8E93] truncate">{w.meaning}</span>
                   </div>
-                )}
-              </button>
-            </div>
-          ))}
+                  {expandedId === w.id && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      className="mt-3 pt-3 border-t border-[#EFEFEF] space-y-1.5"
+                    >
+                      {w.phonetic && (
+                        <p className="text-sm text-[#8E8E93]">{w.phonetic}</p>
+                      )}
+                      {w.example && (
+                        <p className="text-sm text-[#8E8E93] leading-relaxed">{w.example}</p>
+                      )}
+                    </motion.div>
+                  )}
+                </button>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+
           {query.trim() && results.length === 0 && (
-            <p className="text-center text-gray-400 py-8">未找到匹配的单词</p>
+            <div className="flex flex-col items-center justify-center py-16">
+              <div className="w-16 h-16 rounded-full bg-[#8E8E93]/10 flex items-center justify-center mb-4">
+                <span className="text-2xl text-[#8E8E93]">?</span>
+              </div>
+              <p className="text-[#8E8E93]">未找到匹配的单词</p>
+            </div>
           )}
+
           {!query.trim() && (
-            <p className="text-center text-gray-400 py-8">输入关键词搜索单词</p>
+            <div className="flex flex-col items-center justify-center py-16">
+              <div className="w-16 h-16 rounded-full bg-[#17C964]/10 flex items-center justify-center mb-4">
+                <span className="text-2xl text-[#17C964]">B</span>
+              </div>
+              <p className="text-[#8E8E93]">输入关键词搜索单词</p>
+            </div>
           )}
         </div>
       </div>
-    </div>
+    </main>
   )
 }
+
 export default WordBookPage

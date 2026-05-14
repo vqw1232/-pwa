@@ -1,7 +1,23 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #17C964;
+  --color-danger: #FF453A;
+  --color-text: #111111;
+  --color-subtext: #8E8E93;
+  --color-bg: #F7F7F8;
+  --color-card: #FFFFFF;
+
+  --shadow-soft: 0 8px 30px rgba(0,0,0,0.05);
+  --shadow-green: 0 10px 30px rgba(18,199,100,0.28);
+  --shadow-red: 0 10px 30px rgba(255,59,48,0.28);
+}
+
 body {
-  background: #f9fafb;
+  background: #F7F7F8;
+  font-family: Inter, "SF Pro Display", "PingFang SC", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
