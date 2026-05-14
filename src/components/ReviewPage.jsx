@@ -72,7 +72,7 @@ function ReviewPage({ progress }) {
   // Setup screen
   if (!started) {
     return (
-      <div className="min-h-full flex flex-col items-center justify-center px-6">
+      <div className="flex-1 flex flex-col items-center justify-center px-6">
         <div className="text-center max-w-md">
           <h2 className="text-xl font-bold text-gray-700 mb-2">复习模式</h2>
           <p className="text-sm text-gray-400 mb-2">优先复习你之前答错的单词</p>
@@ -122,7 +122,7 @@ function ReviewPage({ progress }) {
   // Done screen
   if (isDone) {
     return (
-      <div className="min-h-full flex flex-col items-center justify-center px-6">
+      <div className="flex-1 flex flex-col items-center justify-center px-6">
         <div className="text-center">
           <p className="text-5xl mb-4">✓</p>
           <h2 className="text-xl font-bold text-gray-700 mb-2">复习完成！</h2>
@@ -142,7 +142,7 @@ function ReviewPage({ progress }) {
 
   // Active review
   return (
-    <div className="min-h-full flex flex-col">
+    <div className="flex-1 flex flex-col">
       {/* Top bar */}
       <div className="shrink-0 px-4 pt-4 pb-2">
         <div className="max-w-md mx-auto">

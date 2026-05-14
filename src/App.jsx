@@ -22,14 +22,12 @@ function App() {
 
   return (
     <div className="min-h-svh bg-gray-50 flex flex-col">
-      <div className="flex-1 min-h-0 flex flex-col">
-        {tab === 'study' && <StudyPage progress={progress} setProgress={setProgress} />}
-        {tab === 'review' && <ReviewPage progress={progress} />}
-        {tab === 'wordbook' && <WordBookPage />}
-        {tab === 'profile' && (
-          <ProfilePage synced={synced} setProgress={setProgress} setSynced={setSynced} />
-        )}
-      </div>
+      {tab === 'study' && <StudyPage progress={progress} setProgress={setProgress} />}
+      {tab === 'review' && <ReviewPage progress={progress} />}
+      {tab === 'wordbook' && <WordBookPage />}
+      {tab === 'profile' && (
+        <ProfilePage synced={synced} setProgress={setProgress} setSynced={setSynced} />
+      )}
       <BottomNav tab={tab} setTab={setTab} />
     </div>
   )

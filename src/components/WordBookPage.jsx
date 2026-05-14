@@ -15,7 +15,7 @@ function WordBookPage() {
   }, [query])
 
   return (
-    <div className="min-h-full flex flex-col">
+    <div className="flex-1 flex flex-col">
       {/* Search bar */}
       <div className="shrink-0 px-4 pt-4 pb-2">
         <div className="max-w-md mx-auto">
