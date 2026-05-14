@@ -21,7 +21,8 @@
       "Bash(gh auth *)",
       "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); r=d['workflow_runs'][0]; print\\(f'Status: {r[\\\\\"status\\\\\"]}, Conclusion: {r[\\\\\"conclusion\\\\\"]}, URL: {r[\\\\\"html_url\\\\\"]}'\\)\")",
       "Bash(node -e \"const d=[]; process.stdin.on\\('data',c=>d.push\\(c\\)\\); process.stdin.on\\('end',\\(\\)=>{const r=JSON.parse\\(d.join\\(''\\)\\).workflow_runs?.[0]; if\\(r\\) console.log\\('Status:',r.status,'Conclusion:',r.conclusion,'\\\\\\\\nURL:',r.html_url\\); else console.log\\('No runs yet'\\)}\\)\")",
-      "Bash(node -e \"const d=[]; process.stdin.on\\('data',c=>d.push\\(c\\)\\); process.stdin.on\\('end',\\(\\)=>{const j=JSON.parse\\(d.join\\(''\\)\\).jobs?.[0]; if\\(j\\) console.log\\(j.steps?.map\\(s=>s.name+': '+s.conclusion\\).join\\('\\\\\\\\n'\\)\\)}\\)\")"
+      "Bash(node -e \"const d=[]; process.stdin.on\\('data',c=>d.push\\(c\\)\\); process.stdin.on\\('end',\\(\\)=>{const j=JSON.parse\\(d.join\\(''\\)\\).jobs?.[0]; if\\(j\\) console.log\\(j.steps?.map\\(s=>s.name+': '+s.conclusion\\).join\\('\\\\\\\\n'\\)\\)}\\)\")",
+      "Bash(node -e \"const d=[]; process.stdin.on\\('data',c=>d.push\\(c\\)\\); process.stdin.on\\('end',\\(\\)=>{const r=JSON.parse\\(d.join\\(''\\)\\).workflow_runs?.[0]; if\\(r\\) console.log\\('Trigger:',r.event,'Status:',r.status,'Conclusion:',r.conclusion,'\\\\\\\\nBranch:',r.head_branch\\); else console.log\\('No runs'\\)}\\)\")"
     ]
   }
 }
