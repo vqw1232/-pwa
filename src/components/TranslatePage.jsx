@@ -22,9 +22,12 @@ function TranslatePage() {
     const langpair = toZh ? 'en|zh-CN' : 'zh-CN|en'
 
     try {
-      const res = await fetch(
-        `https://api.mymemory.translated.net/get?q=${encodeURIComponent(input.trim())}&langpair=${langpair}`
-      )
+      const form = new URLSearchParams({ q: input.trim(), langpair })
+      const res = await fetch('https://api.mymemory.translated.net/translate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: form.toString()
+      })
       const data = await res.json()
       if (data.responseStatus === 200 && data.responseData?.translatedText) {
         setResult(data.responseData.translatedText)
