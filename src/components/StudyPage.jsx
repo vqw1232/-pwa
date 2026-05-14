@@ -108,9 +108,9 @@ function StudyPage({ progress, setProgress }) {
   if (unstudiedWords.length === 0) {
     return (
       <main className="flex-1 px-5 pt-6 pb-24 flex flex-col">
-        <header className="mb-4">
+        <div className="bg-white rounded-[24px] px-5 py-4 shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
           <h1 className="text-4xl font-bold tracking-tight text-[#111]">学习</h1>
-        </header>
+        </div>
         <div className="flex-1 flex flex-col items-center justify-center -mt-12">
           <div className="text-center max-w-md">
             <div className="w-20 h-20 rounded-full bg-[#17C964]/10 flex items-center justify-center mx-auto mb-6">
@@ -137,9 +137,9 @@ function StudyPage({ progress, setProgress }) {
     <>
       <main className="flex-1 px-5 pt-6 pb-24 flex flex-col gap-3">
         {/* ============ HEADER ============ */}
-        <header className="pt-1 mb-1">
+        <div className="bg-white rounded-[24px] px-5 py-4 shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
           <h1 className="text-4xl font-bold tracking-tight text-[#111]">学习</h1>
-        </header>
+        </div>
 
         {/* ============ PROGRESS CARD ============ */}
         <div className="bg-white rounded-[24px] px-5 py-4 shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
