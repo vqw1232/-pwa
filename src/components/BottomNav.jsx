@@ -10,7 +10,7 @@ const tabs = [
 function BottomNav({ tab, setTab }) {
   return (
     <nav className="shrink-0 bg-white/80 backdrop-blur-xl border-t border-black/5"
-      style={{ height: '92px', paddingBottom: 'env(safe-area-inset-bottom)' }}>
+      style={{ height: '72px', paddingBottom: 'env(safe-area-inset-bottom)' }}>
       <div className="max-w-md mx-auto h-full grid grid-cols-4">
         {tabs.map(t => {
           const isActive = tab === t.key
@@ -20,7 +20,7 @@ function BottomNav({ tab, setTab }) {
               onClick={() => setTab(t.key)}
               className="flex flex-col items-center justify-center gap-1 relative"
             >
-              <span className={`text-[10px] font-medium transition-colors duration-200 ${
+              <span className={`text-sm font-semibold transition-colors duration-200 ${
                 isActive ? 'text-[#17C964]' : 'text-[#9E9EA7]'
               }`}>
                 {t.label}

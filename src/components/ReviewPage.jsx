@@ -237,7 +237,7 @@ function ReviewPage({ progress }) {
               transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
               className="w-full flex flex-col items-center"
             >
-              <h2 className="text-[56px] font-bold leading-none tracking-[-0.04em] text-[#111] select-none text-center break-words max-w-full">
+              <h2 className="text-[44px] font-bold leading-none tracking-[-0.04em] text-[#111] select-none text-center break-words max-w-full">
                 {current.word}
               </h2>
 
@@ -292,17 +292,17 @@ function ReviewPage({ progress }) {
             <motion.button
               onClick={() => handleKnow(false)}
               whileTap={{ scale: 0.96 }}
-              className="h-[104px] rounded-[24px] bg-gradient-to-b from-[#FF5A5F] to-[#FF3B30] shadow-[0_8px_24px_rgba(255,59,48,0.25)] flex flex-col items-center justify-center gap-0.5"
+              className="h-[84px] rounded-[24px] bg-gradient-to-b from-[#FF5A5F] to-[#FF3B30] shadow-[0_8px_24px_rgba(255,59,48,0.25)] flex flex-col items-center justify-center gap-0.5"
             >
-              <span className="text-2xl font-bold text-white leading-tight">不认识</span>
+              <span className="text-xl font-bold text-white leading-tight">不认识</span>
               <span className="text-sm text-white/80">再记一次</span>
             </motion.button>
             <motion.button
               onClick={() => handleKnow(true)}
               whileTap={{ scale: 0.96 }}
-              className="h-[104px] rounded-[24px] bg-gradient-to-b from-[#22D06F] to-[#12C764] shadow-[0_8px_24px_rgba(18,199,100,0.25)] flex flex-col items-center justify-center gap-0.5"
+              className="h-[84px] rounded-[24px] bg-gradient-to-b from-[#22D06F] to-[#12C764] shadow-[0_8px_24px_rgba(18,199,100,0.25)] flex flex-col items-center justify-center gap-0.5"
             >
-              <span className="text-2xl font-bold text-white leading-tight">认识</span>
+              <span className="text-xl font-bold text-white leading-tight">认识</span>
               <span className="text-sm text-white/80">记得了</span>
             </motion.button>
           </div>
