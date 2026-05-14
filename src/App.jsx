@@ -3,6 +3,7 @@ import BottomNav from './components/BottomNav'
 import StudyPage from './components/StudyPage'
 import ReviewPage from './components/ReviewPage'
 import WordBookPage from './components/WordBookPage'
+import TranslatePage from './components/TranslatePage'
 import ProfilePage from './components/ProfilePage'
 import { loadProgress } from './lib/progress'
 
@@ -25,6 +26,7 @@ function App() {
       {tab === 'study' && <StudyPage progress={progress} setProgress={setProgress} />}
       {tab === 'review' && <ReviewPage progress={progress} />}
       {tab === 'wordbook' && <WordBookPage />}
+      {tab === 'translate' && <TranslatePage />}
       {tab === 'profile' && (
         <ProfilePage synced={synced} setProgress={setProgress} setSynced={setSynced} />
       )}

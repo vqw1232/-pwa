@@ -2,6 +2,7 @@ function BottomNav({ tab, setTab }) {
   const tabs = [
     { key: 'study', label: '学习' },
     { key: 'review', label: '复习' },
+    { key: 'translate', label: '翻译' },
     { key: 'wordbook', label: '单词本' },
     { key: 'profile', label: '我的' },
   ]
