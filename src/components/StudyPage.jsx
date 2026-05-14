@@ -27,15 +27,29 @@ function addStudiedToday(wordId) {
 }
 
 function StudyPage({ progress, setProgress }) {
-  const [sessionStudied, setSessionStudied] = useState(() => new Set())
+  // sessionStudied tracks words excluded from study (across sessions + this session)
+  const [sessionStudied, setSessionStudied] = useState(() => {
+    const ids = Object.keys(progress)
+    return ids.length > 0 ? new Set(ids.map(Number)) : new Set()
+  })
+  const [progressLoaded, setProgressLoaded] = useState(Object.keys(progress).length > 0)
   const [index, setIndex] = useState(0)
   const [revealed, setRevealed] = useState(false)
   const [goal, setGoalState] = useState(getDailyGoal)
   const [studiedIds, setStudiedIds] = useState(getStudiedToday)
 
+  // Once server progress arrives, seed sessionStudied with already-studied words
+  useEffect(() => {
+    if (!progressLoaded && Object.keys(progress).length > 0) {
+      setSessionStudied(new Set(Object.keys(progress).map(Number)))
+      setProgressLoaded(true)
+    }
+  }, [progress, progressLoaded])
+
+  // Filter only by sessionStudied — NOT by progress, so setProgress won't shift the list
   const unstudiedWords = useMemo(() =>
-    words.filter(w => !progress[w.id] && !sessionStudied.has(w.id)),
-    [progress, sessionStudied]
+    words.filter(w => !sessionStudied.has(w.id)),
+    [sessionStudied]
   )
 
   const current = unstudiedWords[index]
