@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useMemo, useEffect } from 'react'
 import words from '../data/ielts_words.json'
 import { saveProgress } from '../lib/progress'
 
@@ -27,16 +27,29 @@ function addStudiedToday(wordId) {
 }
 
 function StudyPage({ progress, setProgress }) {
+  const [sessionStudied, setSessionStudied] = useState(() => new Set())
   const [index, setIndex] = useState(0)
   const [revealed, setRevealed] = useState(false)
   const [goal, setGoalState] = useState(getDailyGoal)
   const [studiedIds, setStudiedIds] = useState(getStudiedToday)
 
-  const current = words[index]
+  const unstudiedWords = useMemo(() =>
+    words.filter(w => !progress[w.id] && !sessionStudied.has(w.id)),
+    [progress, sessionStudied]
+  )
+
+  const current = unstudiedWords[index]
   const wordProgress = progress[current?.id]
   const correctCount = wordProgress?.correct ?? 0
   const studiedCount = studiedIds.length
   const dailyProgress = Math.min(studiedCount / goal * 100, 100)
+
+  // Safety: keep index in bounds if list unexpectedly shrinks
+  useEffect(() => {
+    if (index >= unstudiedWords.length && unstudiedWords.length > 0) {
+      setIndex(unstudiedWords.length - 1)
+    }
+  }, [unstudiedWords.length, index])
 
   const handleKnow = useCallback(async (known) => {
     setRevealed(true)
@@ -54,10 +67,13 @@ function StudyPage({ progress, setProgress }) {
     setStudiedIds(getStudiedToday())
   }, [current, setProgress])
 
+  // When user taps "下一个", mark current word as studied this session.
+  // The word slides out of unstudiedWords and the next word takes its place
+  // (index stays the same).
   const handleNext = useCallback(() => {
-    setIndex(i => (i < words.length - 1 ? i + 1 : 0))
+    setSessionStudied(prev => new Set([...prev, current.id]))
     setRevealed(false)
-  }, [])
+  }, [current])
 
   const adjustGoal = (delta) => {
     setGoalState(g => {
@@ -65,6 +81,21 @@ function StudyPage({ progress, setProgress }) {
       localStorage.setItem('dailyGoal', String(next))
       return next
     })
+  }
+
+  // All done
+  if (unstudiedWords.length === 0) {
+    return (
+      <div className="flex-1 flex flex-col items-center justify-center px-6">
+        <div className="text-center max-w-md">
+          <p className="text-5xl mb-4 font-light text-indigo-300">✓</p>
+          <h2 className="text-xl font-bold text-gray-700 mb-2">全部学完！</h2>
+          <p className="text-sm text-gray-400">
+            所有单词已掌握，去复习巩固吧
+          </p>
+        </div>
+      </div>
+    )
   }
 
   if (!current) return null
@@ -76,7 +107,7 @@ function StudyPage({ progress, setProgress }) {
         <div className="max-w-md mx-auto">
           <div className="flex justify-between items-center mb-2">
             <span className="text-sm text-gray-400 font-mono">
-              {index + 1} / {words.length}
+              剩余 {unstudiedWords.length} 词
             </span>
             <div className="flex items-center gap-1.5">
               <span className="text-xs text-gray-400">今日目标</span>
