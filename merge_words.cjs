@@ -18,15 +18,14 @@ function parseNdjson(filePath) {
 
       const sentences = wordData.sentence?.sentences || []
       const firstSentence = sentences[0]
-      const example = firstSentence
-        ? (firstSentence.sContent || '')
-        : ''
+      const example = firstSentence ? (firstSentence.sContent || '') : ''
+      const exampleCn = firstSentence ? (firstSentence.sCn || '') : ''
 
       const usphone = wordData.usphone || ''
       const ukphone = wordData.ukphone || ''
       const phonetic = usphone || ukphone || ''
 
-      words.push({ headWord, phonetic, meaning, example })
+      words.push({ headWord, phonetic, meaning, example, exampleCn })
     } catch (e) {
       // skip malformed lines
     }
@@ -38,11 +37,11 @@ function parseNdjson(filePath) {
 // Parse all source files
 const dir = 'C:/Users/25413/Desktop/新建文件夹'
 const files = [
-  path.join(dir, 'IELTS_3_temp', 'IELTS_3.json'),
-  path.join(dir, 'IELTS_2_temp', 'IELTS_2.json'),
-  path.join(dir, 'IELTSluan_2_temp', 'IELTSluan_2.json'),
-  path.join(dir, 'TOEFL_2.json'),
-  path.join(dir, 'TOEFL_3.json'),
+  path.join(dir, 'sources/1521164666922_IELTS_3/IELTS_3.json'),
+  path.join(dir, 'sources/1521164657744_IELTS_2/IELTS_2.json'),
+  path.join(dir, 'sources/1521164624473_IELTSluan_2/IELTSluan_2.json'),
+  path.join(dir, 'sources/1521164640451_TOEFL_2/TOEFL_2.json'),
+  path.join(dir, 'sources/1521164667985_TOEFL_3/TOEFL_3.json'),
 ]
 
 let allWords = []
@@ -71,12 +70,14 @@ for (let i = unique.length - 1; i > 0; i--) {
 }
 
 // Assign IDs and format
+// outDir = dir (defined above)
 const output = unique.map((w, idx) => ({
   id: idx + 1,
   word: w.headWord,
   phonetic: w.phonetic,
   meaning: w.meaning || '',
   example: w.example || '',
+  exampleCn: w.exampleCn || '',
 }))
 
 fs.writeFileSync(
@@ -84,5 +85,9 @@ fs.writeFileSync(
   JSON.stringify(output, null, 2)
 )
 
+// Stats
+const withEx = output.filter(w => w.example).length
+const withExCn = output.filter(w => w.exampleCn).length
 console.log(`\nSaved ${output.length} words to src/data/ielts_words.json`)
-console.log('Sample:', output.slice(0, 5).map(w => w.word).join(', '))
+console.log(`With example: ${withEx}, With exampleCn: ${withExCn}`)
+console.log('Sample:', output.slice(0, 5).map(w => `${w.word} | ${w.example} → ${w.exampleCn}`).join('\n'))

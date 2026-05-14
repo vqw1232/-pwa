@@ -170,7 +170,7 @@ function StudyPage({ progress, setProgress }) {
             revealed ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'
           }`}>
             <p className="text-xl text-gray-700 mb-4 leading-relaxed">{current.meaning}</p>
-            <p className="text-sm text-gray-400 italic leading-relaxed bg-gray-100 rounded-xl px-4 py-3">{current.example}</p>
+            <p className="text-sm text-gray-400 italic leading-relaxed bg-gray-100 rounded-xl px-4 py-3">{current.example}{current.exampleCn ? `（${current.exampleCn}）` : ''}</p>
             {correctCount > 0 && (
               <p className="text-xs text-emerald-500 mt-3">已掌握 {correctCount} 次</p>
             )}
