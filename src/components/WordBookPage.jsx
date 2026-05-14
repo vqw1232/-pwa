@@ -17,9 +17,9 @@ function WordBookPage() {
 
   return (
     <main className="flex-1 px-5 pt-6 pb-32 flex flex-col">
-      <header className="flex items-center justify-between pt-1 mb-6">
+      <div className="bg-white rounded-[24px] px-5 py-4 shadow-[0_8px_30px_rgba(0,0,0,0.04)] mb-4">
         <h1 className="text-4xl font-bold tracking-tight text-[#111]">单词本</h1>
-      </header>
+      </div>
 
       {/* Search bar */}
       <div className="mb-4">

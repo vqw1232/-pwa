@@ -19,9 +19,9 @@ function ProfilePage({ synced, setProgress, setSynced }) {
 
   return (
     <main className="flex-1 px-5 pt-6 pb-32 flex flex-col">
-      <header className="flex items-center justify-between pt-1 mb-6">
+      <div className="bg-white rounded-[24px] px-5 py-4 shadow-[0_8px_30px_rgba(0,0,0,0.04)] mb-4">
         <h1 className="text-4xl font-bold tracking-tight text-[#111]">我的</h1>
-      </header>
+      </div>
 
       <div className="space-y-4">
         {/* Sync Card */}
