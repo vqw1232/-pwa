@@ -9,6 +9,20 @@ function shuffle(arr) {
   return arr
 }
 
+function getReviewedToday() {
+  try {
+    const raw = localStorage.getItem('reviewedTimestamps')
+    if (!raw) return {}
+    return JSON.parse(raw)
+  } catch { return {} }
+}
+
+function markReviewed(wordId) {
+  const map = getReviewedToday()
+  map[wordId] = Date.now()
+  localStorage.setItem('reviewedTimestamps', JSON.stringify(map))
+}
+
 function ReviewPage({ progress }) {
   const [reviewWords, setReviewWords] = useState([])
   const [eligibleCount, setEligibleCount] = useState(0)
@@ -19,7 +33,7 @@ function ReviewPage({ progress }) {
     try { return parseInt(localStorage.getItem('reviewCount')) || 20 } catch { return 20 }
   })
 
-  // Build review list: spaced repetition within N+1 to N+7 day window
+  // Build review list: wrong words first, then spaced by 1-7 day window
   useEffect(() => {
     const studiedIds = Object.keys(progress)
     if (studiedIds.length === 0) {
@@ -27,28 +41,28 @@ function ReviewPage({ progress }) {
       return
     }
 
+    const reviewed = getReviewedToday()
     const now = Date.now()
     const oneDay = 24 * 60 * 60 * 1000
 
-    // Score each word by review priority
+    // Score each word
     const scored = []
     for (const id of studiedIds) {
       const p = progress[id]
-      const lastTime = p.last_reviewed_at ? new Date(p.last_reviewed_at).getTime() : 0
+      const lastTime = reviewed[id] || 0
       const daysSince = (now - lastTime) / oneDay
 
       // Skip words reviewed within the last 24 hours
       if (daysSince < 1 && lastTime > 0) continue
 
-      // Priority: wrong words first, then longest wait
+      // Priority: wrong words (highest), then days-since-last-review
       const priority = (p.wrong > 0 ? 1000 : 0) + daysSince
-      scored.push({ id: parseInt(id), priority, daysSince, wrong: p.wrong, correct: p.correct, last_reviewed_at: p.last_reviewed_at })
+      scored.push({ id: parseInt(id), priority, daysSince, wrong: p.wrong })
     }
 
-    // Sort by priority desc
     scored.sort((a, b) => b.priority - a.priority)
 
-    // Randomly shuffle within tiers, then take top `count`
+    // Randomize within tiers, then cap at `count`
     const selected = []
     const wrong = scored.filter(s => s.wrong > 0)
     const overdue = scored.filter(s => s.wrong === 0 && s.daysSince > 7)
@@ -63,7 +77,7 @@ function ReviewPage({ progress }) {
 
     const mapped = selected.map(s => {
       const word = words.find(w => w.id === s.id)
-      return word ? { ...word, progress: progress[s.id] } : null
+      return word ? { ...word, wrong: s.wrong, correct: progress[s.id]?.correct ?? 0 } : null
     }).filter(Boolean)
 
     setReviewWords(mapped)
@@ -74,13 +88,14 @@ function ReviewPage({ progress }) {
   }, [progress, count])
 
   const current = reviewWords[index]
-  const correctCount = current?.progress?.correct ?? 0
-  const wrongCount = current?.progress?.wrong ?? 0
+  const correctCount = current?.correct ?? 0
+  const wrongCount = current?.wrong ?? 0
   const isDone = started && index >= reviewWords.length
 
   const handleKnow = useCallback((known) => {
     setRevealed(true)
-  }, [])
+    if (current) markReviewed(current.id)
+  }, [current])
 
   const handleNext = useCallback(() => {
     if (index < reviewWords.length - 1) {

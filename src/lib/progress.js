@@ -4,7 +4,7 @@ export async function loadProgress() {
   const userId = getUserId()
   const { data, error } = await supabase
     .from('user_progress')
-    .select('word_id, correct_count, wrong_count, last_reviewed_at')
+    .select('word_id, correct_count, wrong_count')
     .eq('user_id', userId)
 
   if (error) {
@@ -18,7 +18,7 @@ export async function loadProgress() {
 
   const map = {}
   for (const row of data) {
-    map[row.word_id] = { correct: row.correct_count, wrong: row.wrong_count, last_reviewed_at: row.last_reviewed_at }
+    map[row.word_id] = { correct: row.correct_count, wrong: row.wrong_count }
   }
   return map
 }
