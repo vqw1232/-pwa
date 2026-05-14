@@ -11,6 +11,7 @@ function shuffle(arr) {
 
 function ReviewPage({ progress }) {
   const [reviewWords, setReviewWords] = useState([])
+  const [eligibleCount, setEligibleCount] = useState(0)
   const [index, setIndex] = useState(0)
   const [revealed, setRevealed] = useState(false)
   const [started, setStarted] = useState(false)
@@ -18,26 +19,55 @@ function ReviewPage({ progress }) {
     try { return parseInt(localStorage.getItem('reviewCount')) || 20 } catch { return 20 }
   })
 
-  // Build review list when progress or count changes
+  // Build review list: spaced repetition within N+1 to N+7 day window
   useEffect(() => {
     const studiedIds = Object.keys(progress)
     if (studiedIds.length === 0) {
       setReviewWords([])
       return
     }
-    const wrongIds = studiedIds.filter(id => progress[id].wrong > 0)
-    const correctIds = studiedIds.filter(id => progress[id].wrong === 0 && progress[id].correct > 0)
 
-    shuffle(wrongIds)
-    shuffle(correctIds)
+    const now = Date.now()
+    const oneDay = 24 * 60 * 60 * 1000
 
-    const selected = [...wrongIds, ...correctIds].slice(0, count)
-    const mapped = selected.map(id => {
-      const word = words.find(w => w.id === parseInt(id) || String(w.id) === id)
-      return word ? { ...word, progress: progress[id] } : null
+    // Score each word by review priority
+    const scored = []
+    for (const id of studiedIds) {
+      const p = progress[id]
+      const lastTime = p.last_reviewed_at ? new Date(p.last_reviewed_at).getTime() : 0
+      const daysSince = (now - lastTime) / oneDay
+
+      // Skip words reviewed within the last 24 hours
+      if (daysSince < 1 && lastTime > 0) continue
+
+      // Priority: wrong words first, then longest wait
+      const priority = (p.wrong > 0 ? 1000 : 0) + daysSince
+      scored.push({ id: parseInt(id), priority, daysSince, wrong: p.wrong, correct: p.correct, last_reviewed_at: p.last_reviewed_at })
+    }
+
+    // Sort by priority desc
+    scored.sort((a, b) => b.priority - a.priority)
+
+    // Randomly shuffle within tiers, then take top `count`
+    const selected = []
+    const wrong = scored.filter(s => s.wrong > 0)
+    const overdue = scored.filter(s => s.wrong === 0 && s.daysSince > 7)
+    const window = scored.filter(s => s.wrong === 0 && s.daysSince >= 1 && s.daysSince <= 7)
+
+    shuffle(wrong)
+    shuffle(overdue)
+    shuffle(window)
+
+    selected.push(...wrong, ...overdue, ...window)
+    selected.splice(count)
+
+    const mapped = selected.map(s => {
+      const word = words.find(w => w.id === s.id)
+      return word ? { ...word, progress: progress[s.id] } : null
     }).filter(Boolean)
 
     setReviewWords(mapped)
+    setEligibleCount(scored.length)
     setIndex(0)
     setStarted(false)
     setRevealed(false)
@@ -77,8 +107,7 @@ function ReviewPage({ progress }) {
           <h2 className="text-xl font-bold text-gray-700 mb-2">复习模式</h2>
           <p className="text-sm text-gray-400 mb-2">优先复习你之前答错的单词</p>
           <p className="text-xs text-gray-400 mb-6">
-            可复习单词: {Object.keys(progress).length} 个
-            {reviewWords.length > 0 && ` · 本次 ${reviewWords.length} 个`}
+            待复习: {eligibleCount} 个 · 本次: {reviewWords.length} 个
           </p>
 
           <div className="flex items-center justify-center gap-3 mb-8">
