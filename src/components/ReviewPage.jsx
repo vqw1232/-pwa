@@ -1,6 +1,8 @@
 import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import words from '../data/ielts_words.json'
+import { lookupWord } from '../lib/dictionary'
+import WordPopover from './WordPopover'
 
 function shuffle(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
@@ -44,6 +46,7 @@ function ReviewPage({ progress }) {
   const [count, setCount] = useState(() => {
     try { return parseInt(localStorage.getItem('reviewCount')) || 20 } catch { return 20 }
   })
+  const [wordPopover, setWordPopover] = useState(null)
 
   useEffect(() => {
     const studiedIds = Object.keys(progress)
@@ -103,6 +106,7 @@ function ReviewPage({ progress }) {
   }, [current])
 
   const handleNext = useCallback(() => {
+    setWordPopover(null)
     if (index < reviewWords.length - 1) {
       setIndex(i => i + 1)
       setRevealed(false)
@@ -119,8 +123,8 @@ function ReviewPage({ progress }) {
     })
   }
 
-  const exampleParts = current?.example
-    ? current.example.split(new RegExp(`\\b(${current.word})\\b`, 'gi'))
+  const sentenceTokens = current?.example
+    ? current.example.split(/([a-zA-Z]+(?:'[a-zA-Z]+)?)/g)
     : []
 
   // ---- Setup screen ----
@@ -202,6 +206,7 @@ function ReviewPage({ progress }) {
 
   // ---- Active review ----
   return (
+    <>
     <main className="flex-1 px-5 pt-6 pb-24 flex flex-col gap-3">
       <div className="bg-white rounded-[24px] px-5 py-4 shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
         <h1 className="text-4xl font-bold tracking-tight text-[#111]">复习</h1>
@@ -262,16 +267,26 @@ function ReviewPage({ progress }) {
                     </p>
                     {current.example && (
                       <p className="text-base text-[#8E8E93] leading-relaxed mt-3 text-center">
-                        {exampleParts.length > 1 ? (
-                          exampleParts.map((part, i) => {
-                            const isHighlighted = part.toLowerCase() === current.word.toLowerCase()
-                            return isHighlighted
-                              ? <span key={i} className="text-[#18C964] font-semibold">{part}</span>
-                              : <span key={i}>{part}</span>
-                          })
-                        ) : (
-                          current.example
-                        )}
+                        {sentenceTokens.filter(Boolean).map((token, i) => {
+                          const isWord = /^[a-zA-Z]/.test(token)
+                          const isCurrentWord = token.toLowerCase() === current.word.toLowerCase()
+                          const entry = isWord ? lookupWord(token) : null
+                          return (
+                            <span
+                              key={i}
+                              onClick={isWord && entry ? (e) => {
+                                e.stopPropagation()
+                                setWordPopover({ word: token, ...entry, rect: e.target.getBoundingClientRect() })
+                              } : undefined}
+                              className={[
+                                isCurrentWord ? 'text-[#18C964] font-semibold' : '',
+                                isWord && entry ? 'cursor-pointer active:opacity-60 transition-opacity' : '',
+                              ].filter(Boolean).join(' ')}
+                            >
+                              {token}
+                            </span>
+                          )
+                        })}
                       </p>
                     )}
                     {correctCount > 0 && (
@@ -318,6 +333,20 @@ function ReviewPage({ progress }) {
         )}
       </div>
     </main>
+
+    {/* Word popover */}
+    <AnimatePresence>
+      {wordPopover && (
+        <WordPopover
+          word={wordPopover.word}
+          phonetic={wordPopover.phonetic}
+          meaning={wordPopover.meaning}
+          rect={wordPopover.rect}
+          onClose={() => setWordPopover(null)}
+        />
+      )}
+    </AnimatePresence>
+    </>
   )
 }
 

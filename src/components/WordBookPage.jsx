@@ -1,10 +1,13 @@
 import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import words from '../data/ielts_words.json'
+import { lookupWord } from '../lib/dictionary'
+import WordPopover from './WordPopover'
 
 function WordBookPage() {
   const [query, setQuery] = useState('')
   const [expandedId, setExpandedId] = useState(null)
+  const [wordPopover, setWordPopover] = useState(null)
 
   const results = useMemo(() => {
     if (!query.trim()) return []
@@ -16,6 +19,7 @@ function WordBookPage() {
   }, [query])
 
   return (
+    <>
     <main className="flex-1 px-5 pt-6 pb-32 flex flex-col">
       <div className="bg-white rounded-[24px] px-5 py-4 shadow-[0_8px_30px_rgba(0,0,0,0.04)] mb-4">
         <h1 className="text-4xl font-bold tracking-tight text-[#111]">单词本</h1>
@@ -67,7 +71,29 @@ function WordBookPage() {
                         <p className="text-sm text-[#8E8E93]">{w.phonetic}</p>
                       )}
                       {w.example && (
-                        <p className="text-sm text-[#8E8E93] leading-relaxed">{w.example}</p>
+                        (() => {
+                          const tokens = w.example.split(/([a-zA-Z]+(?:'[a-zA-Z]+)?)/g).filter(Boolean)
+                          return (
+                            <p className="text-sm text-[#8E8E93] leading-relaxed">
+                              {tokens.map((token, i) => {
+                                const isWord = /^[a-zA-Z]/.test(token)
+                                const entry = isWord ? lookupWord(token) : null
+                                return (
+                                  <span
+                                    key={i}
+                                    onClick={isWord && entry ? (e) => {
+                                      e.stopPropagation()
+                                      setWordPopover({ word: token, ...entry, rect: e.target.getBoundingClientRect() })
+                                    } : undefined}
+                                    className={isWord && entry ? 'cursor-pointer active:opacity-60 transition-opacity' : ''}
+                                  >
+                                    {token}
+                                  </span>
+                                )
+                              })}
+                            </p>
+                          )
+                        })()
                       )}
                     </motion.div>
                   )}
@@ -96,6 +122,20 @@ function WordBookPage() {
         </div>
       </div>
     </main>
+
+    {/* Word popover */}
+    <AnimatePresence>
+      {wordPopover && (
+        <WordPopover
+          word={wordPopover.word}
+          phonetic={wordPopover.phonetic}
+          meaning={wordPopover.meaning}
+          rect={wordPopover.rect}
+          onClose={() => setWordPopover(null)}
+        />
+      )}
+    </AnimatePresence>
+    </>
   )
 }
 

@@ -2,6 +2,8 @@ import { useState, useCallback, useMemo, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import words from '../data/ielts_words.json'
 import { saveProgress } from '../lib/progress'
+import { lookupWord } from '../lib/dictionary'
+import WordPopover from './WordPopover'
 
 function getTodayKey() {
   return new Date().toISOString().slice(0, 10)
@@ -49,6 +51,7 @@ function StudyPage({ progress, setProgress }) {
   const [direction, setDirection] = useState(1)
   const [goal, setGoalState] = useState(getDailyGoal)
   const [studiedIds, setStudiedIds] = useState(getStudiedToday)
+  const [wordPopover, setWordPopover] = useState(null)
 
   useEffect(() => {
     if (!progressLoaded && Object.keys(progress).length > 0) {
@@ -94,6 +97,7 @@ function StudyPage({ progress, setProgress }) {
     setSessionStudied(prev => new Set([...prev, current.id]))
     setRevealed(false)
     setDirection(1)
+    setWordPopover(null)
   }, [current])
 
   const adjustGoal = (delta) => {
@@ -126,9 +130,9 @@ function StudyPage({ progress, setProgress }) {
 
   if (!current) return null
 
-  // ---- Highlight word in example ----
-  const exampleParts = current.example
-    ? current.example.split(new RegExp(`\\b(${current.word})\\b`, 'gi'))
+  // ---- Tokenize example sentence into words ----
+  const sentenceTokens = current.example
+    ? current.example.split(/([a-zA-Z]+(?:'[a-zA-Z]+)?)/g)
     : []
 
   const exampleCn = current.exampleCn || ''
@@ -219,16 +223,26 @@ function StudyPage({ progress, setProgress }) {
                       {/* Example */}
                       {current.example && (
                         <p className="text-base text-[#8E8E93] leading-relaxed mt-3 text-center">
-                          {exampleParts.length > 1 ? (
-                            exampleParts.map((part, i) => {
-                              const isHighlighted = part.toLowerCase() === current.word.toLowerCase()
-                              return isHighlighted
-                                ? <span key={i} className="text-[#18C964] font-semibold">{part}</span>
-                                : <span key={i}>{part}</span>
-                            })
-                          ) : (
-                            current.example
-                          )}
+                          {sentenceTokens.filter(Boolean).map((token, i) => {
+                            const isWord = /^[a-zA-Z]/.test(token)
+                            const isCurrentWord = token.toLowerCase() === current.word.toLowerCase()
+                            const entry = isWord ? lookupWord(token) : null
+                            return (
+                              <span
+                                key={i}
+                                onClick={isWord && entry ? (e) => {
+                                  e.stopPropagation()
+                                  setWordPopover({ word: token, ...entry, rect: e.target.getBoundingClientRect() })
+                                } : undefined}
+                                className={[
+                                  isCurrentWord ? 'text-[#18C964] font-semibold' : '',
+                                  isWord && entry ? 'cursor-pointer active:opacity-60 transition-opacity' : '',
+                                ].filter(Boolean).join(' ')}
+                              >
+                                {token}
+                              </span>
+                            )
+                          })}
                         </p>
                       )}
 
@@ -290,6 +304,19 @@ function StudyPage({ progress, setProgress }) {
           )}
         </div>
       </main>
+
+      {/* Word popover */}
+      <AnimatePresence>
+        {wordPopover && (
+          <WordPopover
+            word={wordPopover.word}
+            phonetic={wordPopover.phonetic}
+            meaning={wordPopover.meaning}
+            rect={wordPopover.rect}
+            onClose={() => setWordPopover(null)}
+          />
+        )}
+      </AnimatePresence>
     </>
   )
 }
