@@ -123,12 +123,7 @@ function WordBookPage() {
           )}
 
           {!query.trim() && (
-            <div className="flex flex-col items-center justify-center py-16">
-              <div className="w-16 h-16 rounded-full bg-[#17C964]/10 flex items-center justify-center mb-4">
-                <span className="text-2xl text-[#17C964]">B</span>
-              </div>
-              <p className="text-[#8E8E93]">输入关键词搜索单词</p>
-            </div>
+            <p className="text-[#8E8E93] text-center py-16">输入关键词搜索单词</p>
           )}
         </div>
       </div>
