@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import words from '../data/ielts_words.json'
-import { lookupWord } from '../lib/dictionary'
+import { lookupWord, lookupWordAsync } from '../lib/dictionary'
 import WordPopover from './WordPopover'
 
 function shuffle(arr) {
@@ -270,18 +270,24 @@ function ReviewPage({ progress }) {
                         {sentenceTokens.filter(Boolean).map((token, i) => {
                           const isWord = /^[a-zA-Z]/.test(token)
                           const isCurrentWord = token.toLowerCase() === current.word.toLowerCase()
-                          const entry = isWord ? lookupWord(token) : null
                           return (
                             <span
                               key={i}
-                              onClick={isWord ? (e) => {
+                              onClick={isWord ? async (e) => {
                                 e.stopPropagation()
-                                setWordPopover({
-                                  word: token,
-                                  phonetic: entry?.phonetic || '',
-                                  meaning: entry?.meaning || '未收录',
-                                  rect: e.target.getBoundingClientRect(),
-                                })
+                                const rect = e.target.getBoundingClientRect()
+                                const local = lookupWord(token)
+                                if (local) {
+                                  setWordPopover({ ...local, rect, loading: false })
+                                  return
+                                }
+                                setWordPopover({ word: token, phonetic: '', meaning: '', rect, loading: true })
+                                const result = await lookupWordAsync(token)
+                                if (result) {
+                                  setWordPopover({ ...result, rect, loading: false })
+                                } else {
+                                  setWordPopover({ word: token, phonetic: '', meaning: '获取失败，请重试', rect, loading: false })
+                                }
                               } : undefined}
                               className={[
                                 isCurrentWord ? 'text-[#18C964] font-semibold' : '',

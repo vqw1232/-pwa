@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import words from '../data/ielts_words.json'
-import { lookupWord } from '../lib/dictionary'
+import { lookupWord, lookupWordAsync } from '../lib/dictionary'
 import WordPopover from './WordPopover'
 
 function WordBookPage() {
@@ -77,18 +77,24 @@ function WordBookPage() {
                             <p className="text-sm text-[#8E8E93] leading-relaxed">
                               {tokens.map((token, i) => {
                                 const isWord = /^[a-zA-Z]/.test(token)
-                                const entry = isWord ? lookupWord(token) : null
                                 return (
                                   <span
                                     key={i}
-                                    onClick={isWord ? (e) => {
+                                    onClick={isWord ? async (e) => {
                                       e.stopPropagation()
-                                      setWordPopover({
-                                        word: token,
-                                        phonetic: entry?.phonetic || '',
-                                        meaning: entry?.meaning || '未收录',
-                                        rect: e.target.getBoundingClientRect(),
-                                      })
+                                      const rect = e.target.getBoundingClientRect()
+                                      const local = lookupWord(token)
+                                      if (local) {
+                                        setWordPopover({ ...local, rect, loading: false })
+                                        return
+                                      }
+                                      setWordPopover({ word: token, phonetic: '', meaning: '', rect, loading: true })
+                                      const result = await lookupWordAsync(token)
+                                      if (result) {
+                                        setWordPopover({ ...result, rect, loading: false })
+                                      } else {
+                                        setWordPopover({ word: token, phonetic: '', meaning: '获取失败，请重试', rect, loading: false })
+                                      }
                                     } : undefined}
                                     className={isWord ? 'cursor-pointer active:opacity-60 transition-opacity' : ''}
                                   >

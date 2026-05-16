@@ -1,9 +1,8 @@
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 
-export default function WordPopover({ word, phonetic, meaning, rect, onClose }) {
+export default function WordPopover({ word, phonetic, meaning, loading, rect, onClose }) {
   const ref = useRef(null)
-  const isNotFound = meaning === '未收录'
 
   useEffect(() => {
     const close = () => onClose()
@@ -41,14 +40,20 @@ export default function WordPopover({ word, phonetic, meaning, rect, onClose }) 
       style={{ top, left, width: pw, transform: 'translateX(-50%)', maxWidth: 'calc(100vw - 32px)' }}
     >
       <p className="text-lg font-bold text-[#111] leading-tight">{word}</p>
-      {!isNotFound && phonetic && (
-        <p className="text-sm text-[#8E8E93] mt-0.5">{phonetic}</p>
-      )}
-      <div className="h-px bg-[#EFEFEF] my-2.5" />
-      {isNotFound ? (
-        <p className="text-sm text-[#B0B0B8] leading-relaxed">暂未收录该词</p>
+
+      {loading ? (
+        <div className="flex items-center gap-2 mt-2.5">
+          <div className="w-3.5 h-3.5 border-2 border-[#17C964] border-t-transparent rounded-full animate-spin" />
+          <span className="text-xs text-[#B0B0B8]">查询中...</span>
+        </div>
       ) : (
-        <p className="text-sm text-[#555] leading-relaxed">{meaning}</p>
+        <>
+          {phonetic ? (
+            <p className="text-sm text-[#8E8E93] mt-0.5">{phonetic}</p>
+          ) : null}
+          <div className="h-px bg-[#EFEFEF] my-2.5" />
+          <p className="text-sm text-[#555] leading-relaxed">{meaning || '暂未收录'}</p>
+        </>
       )}
     </motion.div>
   )
