@@ -13,7 +13,7 @@ export function lookupWord(text) {
   return dict.get(text.toLowerCase()) || null
 }
 
-const apiCache = new Map()
+const translateCache = new Map()
 
 export async function lookupWordAsync(text) {
   const lower = text.toLowerCase()
@@ -21,21 +21,22 @@ export async function lookupWordAsync(text) {
   const local = dict.get(lower)
   if (local) return local
 
-  if (apiCache.has(lower)) return apiCache.get(lower)
+  if (translateCache.has(lower)) return translateCache.get(lower)
 
   try {
     const res = await fetch(
-      `https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(lower)}`
+      `https://api.mymemory.translated.net/get?q=${encodeURIComponent(lower)}&langpair=en|zh-CN`
     )
     if (!res.ok) return null
     const data = await res.json()
-    if (!data?.[0]) return null
+    const meaning = data?.responseData?.translatedText
+    if (!meaning || meaning === lower) return null
     const entry = {
-      word: data[0].word,
-      phonetic: data[0].phonetic || data[0].phonetics?.[0]?.text || '',
-      meaning: data[0].meanings?.[0]?.definitions?.[0]?.definition || '释义暂无',
+      word: text,
+      phonetic: '',
+      meaning,
     }
-    apiCache.set(lower, entry)
+    translateCache.set(lower, entry)
     return entry
   } catch {
     return null
