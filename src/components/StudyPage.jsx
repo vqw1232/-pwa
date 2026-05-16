@@ -230,13 +230,18 @@ function StudyPage({ progress, setProgress }) {
                             return (
                               <span
                                 key={i}
-                                onClick={isWord && entry ? (e) => {
+                                onClick={isWord ? (e) => {
                                   e.stopPropagation()
-                                  setWordPopover({ word: token, ...entry, rect: e.target.getBoundingClientRect() })
+                                  setWordPopover({
+                                    word: token,
+                                    phonetic: entry?.phonetic || '',
+                                    meaning: entry?.meaning || '未收录',
+                                    rect: e.target.getBoundingClientRect(),
+                                  })
                                 } : undefined}
                                 className={[
                                   isCurrentWord ? 'text-[#18C964] font-semibold' : '',
-                                  isWord && entry ? 'cursor-pointer active:opacity-60 transition-opacity' : '',
+                                  isWord ? 'cursor-pointer active:opacity-60 transition-opacity' : '',
                                 ].filter(Boolean).join(' ')}
                               >
                                 {token}

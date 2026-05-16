@@ -81,11 +81,16 @@ function WordBookPage() {
                                 return (
                                   <span
                                     key={i}
-                                    onClick={isWord && entry ? (e) => {
+                                    onClick={isWord ? (e) => {
                                       e.stopPropagation()
-                                      setWordPopover({ word: token, ...entry, rect: e.target.getBoundingClientRect() })
+                                      setWordPopover({
+                                        word: token,
+                                        phonetic: entry?.phonetic || '',
+                                        meaning: entry?.meaning || '未收录',
+                                        rect: e.target.getBoundingClientRect(),
+                                      })
                                     } : undefined}
-                                    className={isWord && entry ? 'cursor-pointer active:opacity-60 transition-opacity' : ''}
+                                    className={isWord ? 'cursor-pointer active:opacity-60 transition-opacity' : ''}
                                   >
                                     {token}
                                   </span>
