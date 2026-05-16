@@ -64,7 +64,10 @@
       "Bash(taskkill //F //PID 23472)",
       "Bash(taskkill //F //PID 28384)",
       "Bash(gh run *)",
-      "Bash(git fetch *)"
+      "Bash(git fetch *)",
+      "Bash(python *)",
+      "Bash(git checkout *)",
+      "Bash(git stash *)"
     ]
   }
 }
