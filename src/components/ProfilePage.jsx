@@ -1,15 +1,21 @@
+import { useState, useCallback } from 'react'
 import { motion } from 'framer-motion'
-import { useAuth } from '../context/AuthContext'
+import { getUserId, setUserId } from '../lib/supabase'
 import { loadProgress } from '../lib/progress'
 
 function ProfilePage({ synced, setProgress, setSynced }) {
-  const { user, logout } = useAuth()
+  const userId = getUserId()
+  const [idInput, setIdInput] = useState(userId)
 
-  const handleLogout = () => {
-    logout()
-    setProgress({})
-    setSynced(null)
-  }
+  const handleSetId = useCallback(() => {
+    if (setUserId(idInput)) {
+      setSynced(null)
+      loadProgress().then(map => {
+        setProgress(map)
+        setSynced(true)
+      }).catch(() => setSynced(false))
+    }
+  }, [idInput, setProgress, setSynced])
 
   return (
     <main className="flex-1 px-5 pt-6 pb-32 flex flex-col">
@@ -18,24 +24,32 @@ function ProfilePage({ synced, setProgress, setSynced }) {
       </div>
 
       <div className="space-y-4">
-        {/* User info card */}
+        {/* Sync Card */}
         <div className="bg-white rounded-[28px] p-6 shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#17C964] to-[#12A554] flex items-center justify-center text-white text-xl font-bold shadow-[0_4px_12px_rgba(23,201,100,0.3)]">
-              {user?.username?.charAt(0).toUpperCase() || '?'}
-            </div>
-            <div>
-              <h2 className="text-lg font-bold text-[#111]">{user?.username}</h2>
-              <p className="text-sm text-[#8E8E93]">已登录</p>
-            </div>
+          <h2 className="text-lg font-bold text-[#111] mb-2">跨设备同步</h2>
+          <p className="text-sm text-[#8E8E93] mb-4 leading-relaxed">
+            在另一台设备上输入相同的用户 ID 即可同步学习进度。
+          </p>
+          <div className="flex gap-2">
+            <input
+              type="text"
+              value={idInput}
+              onChange={e => setIdInput(e.target.value)}
+              className="flex-1 px-4 py-3 text-sm bg-[#F7F7F8] rounded-[16px] text-[#111] placeholder-[#9E9EA7] focus:outline-none focus:ring-2 focus:ring-[#17C964]/30 transition-all"
+              placeholder="输入你的用户 ID"
+            />
+            <motion.button
+              onClick={handleSetId}
+              whileTap={{ scale: 0.96 }}
+              className="px-6 py-3 text-sm font-medium text-white bg-[#111] rounded-[16px]"
+            >
+              应用
+            </motion.button>
           </div>
-          <motion.button
-            onClick={handleLogout}
-            whileTap={{ scale: 0.97 }}
-            className="w-full py-3 text-sm font-medium text-red-500 bg-red-50 rounded-[16px] hover:bg-red-100 transition-colors"
-          >
-            退出登录
-          </motion.button>
+          <div className="flex items-center gap-2 mt-4 pt-4 border-t border-[#EFEFEF]">
+            <span className="text-xs text-[#8E8E93]">当前 ID:</span>
+            <span className="text-xs font-mono text-[#111]">{userId}</span>
+          </div>
         </div>
 
         {/* Sync Status Card */}
